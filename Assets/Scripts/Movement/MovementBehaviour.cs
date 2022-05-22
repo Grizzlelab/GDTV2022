@@ -24,16 +24,16 @@ namespace Kitsuma.Movement
                 return;
             }
 
-            if (vec == new Vector2(0, 1))
+            switch (vec.y)
             {
-                _dir = Direction.Up;
-                _anim.OnWalkUp();
-            }
-
-            if (vec == new Vector2(0, -1))
-            {
-                _dir = Direction.Down;
-                _anim.OnWalkDown();
+                case > 0:
+                    _dir = Direction.Up;
+                    _anim.OnWalkUp();
+                    break;
+                case < 0:
+                    _dir = Direction.Down;
+                    _anim.OnWalkDown();
+                    break;
             }
         }
     }

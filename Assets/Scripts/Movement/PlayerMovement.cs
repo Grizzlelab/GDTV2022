@@ -1,16 +1,15 @@
-using System;
 using UnityEngine;
-using UnityEngine.InputSystem;
 
 namespace Kitsuma.Movement
 {
     public class PlayerMovement : MovementBehaviour
     {
         [SerializeField, Min(0f)]
-        private float movementSpeed = 10f;
+        private float moveSpeed = 10f;
         
         private Rigidbody2D _rb;
         private PlayerInputActions _input;
+        private Vector2 _movement;
 
         private void Awake()
         {
@@ -21,9 +20,19 @@ namespace Kitsuma.Movement
 
         private void Update()
         {
-            var vec = _input.Player.Movement.ReadValue<Vector2>();
-            _rb.velocity = vec * (movementSpeed * Time.deltaTime);
-            SetAnimationByMovement(vec);
+            _movement = _input.Player.Movement.ReadValue<Vector2>();
+            SetAnimationByMovement(_movement);
+        }
+
+        private void FixedUpdate()
+        {
+            if (_movement == Vector2.zero) return;
+            _rb.MovePosition(GetMovePosition());
+        }
+
+        private Vector2 GetMovePosition()
+        {
+            return _rb.position + _movement * (moveSpeed * Time.fixedDeltaTime);
         }
     }
 }

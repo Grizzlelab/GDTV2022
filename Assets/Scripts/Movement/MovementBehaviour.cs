@@ -1,7 +1,5 @@
-﻿using System;
-using Kitsuma.Entities.Shared;
+﻿using Kitsuma.Entities.Shared;
 using UnityEngine;
-using UnityEngine.Events;
 
 namespace Kitsuma.Movement
 {
@@ -35,6 +33,10 @@ namespace Kitsuma.Movement
                     _anim.OnWalkDown();
                     break;
             }
+
+            if (vec.y != 0) return;
+            if (_dir == Direction.Down) _anim.OnWalkDown();
+            if (_dir == Direction.Up) _anim.OnWalkUp();
         }
     }
 }

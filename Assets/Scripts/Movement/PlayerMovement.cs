@@ -4,7 +4,7 @@ using UnityEngine.InputSystem;
 
 namespace Kitsuma.Movement
 {
-    public class PlayerMovement : MonoBehaviour
+    public class PlayerMovement : MovementBehaviour
     {
         [SerializeField, Min(0f)]
         private float movementSpeed = 10f;
@@ -23,7 +23,7 @@ namespace Kitsuma.Movement
         {
             var vec = _input.Player.Movement.ReadValue<Vector2>();
             _rb.velocity = vec * (movementSpeed * Time.deltaTime);
+            SetAnimationByMovement(vec);
         }
-        
     }
 }

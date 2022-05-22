@@ -116,7 +116,91 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: skelly_idle0
+      name: skelly_spritesheet_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 64
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: baa3f29ad123c3143aa1eefd24edba10
+      internalID: -2055231017
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: skelly_spritesheet_1
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 64
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 31626ffda452e174a824f267d46836da
+      internalID: 266673466
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: skelly_spritesheet_2
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 64
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5f13207de2d3aa14da92f9ea5205157a
+      internalID: 1537493571
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: skelly_spritesheet_3
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 64
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: db8868088673f0045a93250294c4d625
+      internalID: 281341937
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: skelly_spritesheet_4
       rect:
         serializedVersion: 2
         x: 0
@@ -124,20 +208,20 @@ TextureImporter:
         width: 64
         height: 64
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 41e57cbfe482b0b4d9f9cb169f4956bb
-      internalID: 1586762666
+      spriteID: 54f99e2b37f60924dbc02ac253714993
+      internalID: 1645662910
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: skelly_idle1
+      name: skelly_spritesheet_5
       rect:
         serializedVersion: 2
         x: 64
@@ -145,20 +229,20 @@ TextureImporter:
         width: 64
         height: 64
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ceb0088804d1fbd47b81b06c7b805749
-      internalID: -1581823032
+      spriteID: 4dab86b21d9454e4180c55414d2bb9c0
+      internalID: 903467268
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: skelly_walkdown0
+      name: skelly_spritesheet_6
       rect:
         serializedVersion: 2
         x: 128
@@ -166,20 +250,20 @@ TextureImporter:
         width: 64
         height: 64
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a9249a455820eb54fa766935236ad4aa
-      internalID: 816179782
+      spriteID: d67703c36667d0b4394d69463357a66a
+      internalID: 1810223043
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: skelly_walkdown1
+      name: skelly_spritesheet_7
       rect:
         serializedVersion: 2
         x: 192
@@ -187,14 +271,14 @@ TextureImporter:
         width: 64
         height: 64
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3857250e250b41545b5acd8219e65084
-      internalID: -1230537371
+      spriteID: a805ac99132de4640942e6ea8c382c99
+      internalID: 1973862291
       vertices: []
       indices: 
       edges: []
@@ -210,10 +294,14 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      skelly_idle1: -1581823032
-      skelly_walkdown0: 816179782
-      skelly_idle0: 1586762666
-      skelly_walkdown1: -1230537371
+      skelly_spritesheet_0: -2055231017
+      skelly_spritesheet_5: 903467268
+      skelly_spritesheet_7: 1973862291
+      skelly_spritesheet_3: 281341937
+      skelly_spritesheet_4: 1645662910
+      skelly_spritesheet_1: 266673466
+      skelly_spritesheet_2: 1537493571
+      skelly_spritesheet_6: 1810223043
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

@@ -23,23 +23,7 @@ namespace Kitsuma.Movement
         {
             var vec = _input.Player.Movement.ReadValue<Vector2>();
             _rb.velocity = vec * (movementSpeed * Time.deltaTime);
-            EmitSignalByMovement(vec);
-        }
-
-        // This might(?) not be great since it'll emit every frame
-        private void EmitSignalByMovement(Vector2 vec)
-        {
-            if (vec == Vector2.zero)
-            {
-                onIdle?.Invoke();
-                return;
-            }
-
-            if (vec == new Vector2(0, -1))
-            {
-                onWalkDown?.Invoke();
-                return;
-            }
+            SetAnimationByMovement(vec);
         }
     }
 }

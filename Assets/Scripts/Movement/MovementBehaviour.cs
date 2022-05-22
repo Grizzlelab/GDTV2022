@@ -1,14 +1,40 @@
-﻿using UnityEngine;
+﻿using System;
+using Kitsuma.Entities.Shared;
+using UnityEngine;
 using UnityEngine.Events;
 
 namespace Kitsuma.Movement
 {
     public class MovementBehaviour : MonoBehaviour
-    {
-        [SerializeField] protected UnityEvent onWalkDown;
-        [SerializeField] protected UnityEvent onWalkUp;
-        [SerializeField] protected UnityEvent onWalkLeft;
-        [SerializeField] protected UnityEvent onWalkRight;
-        [SerializeField] protected UnityEvent onIdle;
+    { 
+        private AnimatedBehaviour _anim;
+        private Direction _dir = Direction.Down;
+        
+        private void Start()
+        {
+            _anim = GetComponent<AnimatedBehaviour>();
+        }
+
+        protected void SetAnimationByMovement(Vector2 vec)
+        {
+            if (vec == Vector2.zero)
+            {
+                if (_dir == Direction.Down) _anim.OnIdleDown();
+                if (_dir == Direction.Up) _anim.OnIdleUp();
+                return;
+            }
+
+            if (vec == new Vector2(0, 1))
+            {
+                _dir = Direction.Up;
+                _anim.OnWalkUp();
+            }
+
+            if (vec == new Vector2(0, -1))
+            {
+                _dir = Direction.Down;
+                _anim.OnWalkDown();
+            }
+        }
     }
 }

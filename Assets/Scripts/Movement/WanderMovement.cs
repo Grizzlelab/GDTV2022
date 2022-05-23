@@ -21,8 +21,6 @@ namespace Kitsuma.Movement
         private void Awake()
         {
             _trans = transform;
-            _startPosition = _trans.position;
-            _target = GetRandomWanderTarget();
             _wait = new WaitForSeconds(Random.Range(
                 wanderWaitTime - waitRand, 
                 wanderWaitTime + waitRand));
@@ -31,6 +29,13 @@ namespace Kitsuma.Movement
         private void Update()
         {
             if (!_canWander) return;
+            
+            if (_startPosition == Vector3.zero)
+            {
+                _startPosition = _trans.position;
+                _target = GetRandomWanderTarget();
+            }
+            
             Vector3 vec = GetMovementDelta();
             SetAnimationByMovement(vec);
             _trans.position += vec;

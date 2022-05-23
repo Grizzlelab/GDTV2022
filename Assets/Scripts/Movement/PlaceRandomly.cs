@@ -5,8 +5,7 @@ namespace Kitsuma.Movement
 {
     public class PlaceRandomly : MonoBehaviour
     {
-        [SerializeField] private float minDistFromCenter = 100f;
-        [SerializeField] private float maxDistFromCenter = 150f;
+        [SerializeField] private float distFromCenter = 100f;
 
         private void Start()
         {
@@ -16,8 +15,8 @@ namespace Kitsuma.Movement
         private Vector3 GetRandomPosition()
         {
             return new Vector3(
-                Random.Range(minDistFromCenter, maxDistFromCenter), 
-                Random.Range(minDistFromCenter, maxDistFromCenter),
+                Random.Range(-distFromCenter, distFromCenter), 
+                Random.Range(-distFromCenter, distFromCenter),
                 transform.position.z);
         }
     }

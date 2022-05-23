@@ -30,7 +30,7 @@ namespace Kitsuma.Utils
         private float GetAngle()
         {
             Vector2 dir = GetDirection();
-            return Mathf.Atan2(dir.x, dir.y) * Mathf.Rad2Deg;
+            return Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg;
         }
 
         private Vector2 GetDirection()

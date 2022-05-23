@@ -22,12 +22,6 @@ namespace Kitsuma.Combat
             }
         }
 
-        public void AddAbility(Ability a)
-        {
-            if (_abilities.Contains(a)) return;
-            gameObject.AddComponent(a);
-        }
-        
         public List<Ability> GetAbilities() => _abilities;
     }
 }

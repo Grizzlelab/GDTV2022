@@ -256,6 +256,7 @@ GameObject:
   - component: {fileID: 488347572}
   - component: {fileID: 488347573}
   - component: {fileID: 488347574}
+  - component: {fileID: 488347575}
   m_Layer: 0
   m_Name: Necromancer
   m_TagString: Enemy
@@ -399,6 +400,23 @@ MonoBehaviour:
   onHit:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &488347575
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 488347568}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a91f646baf0973341939340b71647fe9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  movementSpeed: 7
+  wanderDistance: {x: 3, y: 3}
+  wanderWaitTime: 5
+  waitRand: 1
+  distanceCheck: 1
 --- !u!1 &1016506270
 GameObject:
   m_ObjectHideFlags: 0

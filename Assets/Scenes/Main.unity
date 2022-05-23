@@ -258,6 +258,9 @@ GameObject:
   - component: {fileID: 488347574}
   - component: {fileID: 488347575}
   - component: {fileID: 488347576}
+  - component: {fileID: 488347579}
+  - component: {fileID: 488347578}
+  - component: {fileID: 488347577}
   m_Layer: 0
   m_Name: Necromancer
   m_TagString: Enemy
@@ -432,6 +435,51 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   minDistFromCenter: 100
   maxDistFromCenter: 150
+--- !u!114 &488347577
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 488347568}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b650639bb8d14c0b9d1d443fc87f6c64, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 5
+  speed: 15
+  cooldownTime: 0.25
+  projectileCount: 3
+  spawnWait: 0.05
+  projectilePrefab: {fileID: 1259675441340021431, guid: c72668b29d08ebd4fa088df7109c4c90, type: 3}
+--- !u!114 &488347578
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 488347568}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa1459bd68ce4964b8c6bbbf8519a2eb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &488347579
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 488347568}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 08959649f4de4a1b99a61f7aa42b75b7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  target: {fileID: 5109557086329652032}
+  minDistFromTarget: 4
+  cooldownTime: 0.25
 --- !u!1 &1016506270
 GameObject:
   m_ObjectHideFlags: 0

@@ -132,8 +132,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 284435173}
-  - component: {fileID: 284435174}
   - component: {fileID: 284435175}
+  - component: {fileID: 284435177}
+  - component: {fileID: 284435176}
   m_Layer: 5
   m_Name: NecroTracker
   m_TagString: Untagged
@@ -162,21 +163,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &284435174
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 284435172}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0cbd3497ff6133c4a8ab48ad4232fafd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  uiCamera: {fileID: 426318974}
-  target: {fileID: 488347570}
-  buffer: 100
 --- !u!114 &284435175
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -191,6 +177,34 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   target: {fileID: 488347570}
   gameObjectToHide: {fileID: 296844440}
+--- !u!114 &284435176
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 284435172}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a6047da94d72450683b9a4d40b271c1f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  target: {fileID: 488347570}
+  uiCamera: {fileID: 426318974}
+  buffer: 100
+--- !u!114 &284435177
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 284435172}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5473e862eb034535a52d68f98fe27133, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  target: {fileID: 488347570}
 --- !u!1 &296844440
 GameObject:
   m_ObjectHideFlags: 0

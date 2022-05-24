@@ -43,10 +43,8 @@ namespace Kitsuma.Combat.Ranged
         private void OnTriggerEnter2D(Collider2D col)
         {
             if (col.gameObject.CompareTag(OwnerTag)) return;
-            if (col.gameObject.TryGetComponent(out Health health))
-            {
-                health.Damage(Damage);
-            }
+            if (!col.gameObject.TryGetComponent(out Health health)) return;
+            health.Damage(Damage);
         }
 
         protected abstract void Move();

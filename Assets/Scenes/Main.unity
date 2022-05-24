@@ -473,6 +473,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Necromancer
       objectReference: {fileID: 0}
+    - target: {fileID: 5619248161752005381, guid: 4feb09e911e03894b9679794101f14e6, type: 3}
+      propertyPath: m_TagString
+      value: Enemy
+      objectReference: {fileID: 0}
     - target: {fileID: 6466231918402606225, guid: 4feb09e911e03894b9679794101f14e6, type: 3}
       propertyPath: m_RootOrder
       value: 5

@@ -29,7 +29,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7045926218441451347, guid: b8ba2f6269bbee54f9799de97da79147, type: 3}
       propertyPath: m_Name
-      value: Necro
+      value: Necromancer
       objectReference: {fileID: 0}
     - target: {fileID: 7092841428067528098, guid: b8ba2f6269bbee54f9799de97da79147, type: 3}
       propertyPath: maxHealth
@@ -39,10 +39,6 @@ PrefabInstance:
       propertyPath: currentHealth
       value: 50
       objectReference: {fileID: 0}
-    - target: {fileID: 7092841428067528098, guid: b8ba2f6269bbee54f9799de97da79147, type: 3}
-      propertyPath: onHealthChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 8308842743309348696, guid: 8066d740a7cc5b54eb72e872a85a1109, type: 3}
     - target: {fileID: 8471015079448463559, guid: b8ba2f6269bbee54f9799de97da79147, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -167,19 +163,6 @@ MonoBehaviour:
   target: {fileID: 0}
   minDistFromTarget: 4
   cooldownTime: 0.5
---- !u!114 &7163995557036454742
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5619248161752005381}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b549f06f7177437a81d44ec04071a59c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  animationPrefix: Necro
 --- !u!114 &6783761702067692916
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -198,3 +181,16 @@ MonoBehaviour:
   projectileCount: 5
   spawnWait: 0.05
   projectilePrefab: {fileID: 1259675441340021431, guid: c72668b29d08ebd4fa088df7109c4c90, type: 3}
+--- !u!114 &7163995557036454742
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5619248161752005381}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b549f06f7177437a81d44ec04071a59c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  animationPrefix: Necro

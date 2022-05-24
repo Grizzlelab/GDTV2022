@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7833730630159597588}
   - component: {fileID: 1870906285963654873}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: DamageArea
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -55,8 +55,36 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 6105134417491830113, guid: a4deba39ec188f14c934a669c12e850c, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 6105134418050534729, guid: a4deba39ec188f14c934a669c12e850c, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 6105134418168678509, guid: a4deba39ec188f14c934a669c12e850c, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 6105134418822690774, guid: a4deba39ec188f14c934a669c12e850c, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 6105134419520509098, guid: a4deba39ec188f14c934a669c12e850c, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 7362103775803900884, guid: a4deba39ec188f14c934a669c12e850c, type: 3}
       propertyPath: m_Name
+      value: Enemy
+      objectReference: {fileID: 0}
+    - target: {fileID: 7362103775803900884, guid: a4deba39ec188f14c934a669c12e850c, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 7362103775803900884, guid: a4deba39ec188f14c934a669c12e850c, type: 3}
+      propertyPath: m_TagString
       value: Enemy
       objectReference: {fileID: 0}
     - target: {fileID: 8245050389109025856, guid: a4deba39ec188f14c934a669c12e850c, type: 3}

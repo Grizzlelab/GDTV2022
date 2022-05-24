@@ -36,7 +36,7 @@ namespace Kitsuma.Combat.Ranged
                 projectilePrefab, 
                 transform.position, 
                 Quaternion.identity);
-            p.Initialize(target, damage, speed);
+            p.Initialize(Owner, target, damage, speed);
         }
 
         public override void Upgrade()

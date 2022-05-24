@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using UnityEngine;
 
@@ -13,9 +14,16 @@ namespace Kitsuma.Combat
         [SerializeField] protected float speed = 10f;
         [SerializeField] protected float cooldownTime = 0.25f;
 
+        protected string Owner;
+        
         private bool _onCooldown;
         private WaitForSeconds _wait;
-        
+
+        private void Awake()
+        { 
+            Owner = gameObject.tag;
+        }
+
         public void Use(Vector2 target)
         {
             if (_onCooldown) return;

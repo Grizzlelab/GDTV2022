@@ -1,3 +1,4 @@
+using Kitsuma.Entities.Shared;
 using UnityEngine;
 
 namespace Kitsuma.Combat.Ranged
@@ -6,6 +7,7 @@ namespace Kitsuma.Combat.Ranged
     {
         protected Transform T;
         protected Vector3 Target;
+        protected string OwnerTag;
         protected float Damage;
         protected float Speed;
         protected bool Initialized;
@@ -17,9 +19,10 @@ namespace Kitsuma.Combat.Ranged
             Move();
         }
 
-        public void Initialize(Vector3 target, float damage, float speed)
+        public void Initialize(string ownerTag, Vector3 target, float damage, float speed)
         {
             T = transform;
+            OwnerTag = ownerTag;
             Target = target;
             Damage = damage;
             Speed = speed;
@@ -35,6 +38,15 @@ namespace Kitsuma.Combat.Ranged
         protected bool IsAtTarget()
         {
             return Vector3.Distance(Target, T.position) < 1f;
+        }
+
+        private void OnTriggerEnter2D(Collider2D col)
+        {
+            if (col.gameObject.CompareTag(OwnerTag)) return;
+            if (col.gameObject.TryGetComponent(out Health health))
+            {
+                health.Damage(Damage);
+            }
         }
 
         protected abstract void Move();

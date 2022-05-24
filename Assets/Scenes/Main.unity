@@ -683,6 +683,9 @@ MonoBehaviour:
   onHit:
     m_PersistentCalls:
       m_Calls: []
+  onHealthChanged:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!114 &488347575
 MonoBehaviour:
   m_ObjectHideFlags: 0

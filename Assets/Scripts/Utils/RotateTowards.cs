@@ -4,6 +4,8 @@ namespace Kitsuma.Utils
 {
     public class RotateTowards : MonoBehaviour
     {
+        // The point of reference to calculate rotation from
+        [SerializeField] private Transform pointOfReference;
         [SerializeField] private Transform target;
         [SerializeField] private float speed = 5f;
 
@@ -16,7 +18,7 @@ namespace Kitsuma.Utils
 
         private void Update()
         {
-            transform.rotation = Quaternion.Slerp(
+            _t.rotation = Quaternion.Slerp(
                 _t.rotation, 
                 GetRotation(), 
                 speed * Time.deltaTime);
@@ -35,7 +37,7 @@ namespace Kitsuma.Utils
 
         private Vector2 GetDirection()
         {
-            return (target.position - _t.position).normalized;
+            return (target.position - pointOfReference.position).normalized;
         }
     }
 }

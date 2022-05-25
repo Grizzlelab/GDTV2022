@@ -231,6 +231,7 @@ MonoBehaviour:
   damage: 2
   speed: 15
   cooldownTime: 0.25
+  pierces: 0
   projectileCount: 1
   spawnWait: 0.05
   projectilePrefab: {fileID: 1259675441340021431, guid: c72668b29d08ebd4fa088df7109c4c90, type: 3}
@@ -273,6 +274,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   animationPrefix: Player
+--- !u!114 &7398541664065397529
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5999703548391268397}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1225b31c0e424d669488f9c89330fc49, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxLevel: 99
+  currentLevel: 1
+  exp: 0
 --- !u!114 &8967151482801541822 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 5267505351092695367, guid: a4deba39ec188f14c934a669c12e850c, type: 3}

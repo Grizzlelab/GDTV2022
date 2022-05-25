@@ -1,4 +1,3 @@
-using System;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -19,6 +18,14 @@ namespace Kitsuma.Combat
             foreach (Ability ability in _abilities)
             {
                 ability.Use(target);
+            }
+        }
+
+        public void ResetAllCooldowns()
+        {
+            foreach (Ability ability in _abilities)
+            {
+                ability.ResetCooldown();
             }
         }
 

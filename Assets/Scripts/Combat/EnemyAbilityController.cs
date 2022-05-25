@@ -40,5 +40,10 @@ namespace Kitsuma.Combat
             float dist = Vector3.Distance(target.position, _t.position);
             return dist <= minDistFromTarget;
         }
+
+        public void Reset()
+        {
+            _isOnCooldown = false;
+        }
     }
 }

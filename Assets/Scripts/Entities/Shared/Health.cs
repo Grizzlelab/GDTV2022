@@ -19,13 +19,13 @@ namespace Kitsuma.Entities.Shared
             OnHealthChanged();
         }
 
-        public void Damage(float amount, string attacker)
+        public void Damage(float amount, string attackerTag)
         {
             if (currentHealth == 0) return;
             currentHealth = Math.Clamp(currentHealth - amount, 0f, maxHealth);
             onHit?.Invoke();
             OnHealthChanged();
-            if (currentHealth == 0) onDeath?.Invoke(attacker);
+            if (currentHealth == 0) onDeath?.Invoke(attackerTag);
         }
         
         private void OnHealthChanged()

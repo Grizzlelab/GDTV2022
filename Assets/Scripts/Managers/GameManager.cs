@@ -1,3 +1,4 @@
+using Kitsuma.Combat;
 using Kitsuma.Entities.Shared;
 using Kitsuma.Movement;
 using Kitsuma.UI;
@@ -19,7 +20,6 @@ namespace Kitsuma.Managers
         {
             if (necromancer.CompareTag(killerTag))
             {
-                Debug.Log("necro killed the player");
                 OnGameLost();
             }
             else
@@ -54,8 +54,10 @@ namespace Kitsuma.Managers
         public void OnNewGame()
         {
             HealPlayer();
+            ResetPlayerAbilities();
             ResetPlayerPosition();
             HealNecromancer();
+            ResetNecromancerAbilities();
             ResetNecromancerPosition();
             EnableEntities();
             gameOverScreen.gameObject.SetActive(false);
@@ -67,6 +69,12 @@ namespace Kitsuma.Managers
             playerHealth.Heal(float.MaxValue);
         }
 
+        private void ResetPlayerAbilities()
+        {
+            var abilities = player.GetComponent<AbilityManager>();
+            abilities.ResetAllCooldowns();
+        }
+
         private void ResetPlayerPosition()
         {
             player.transform.position = Vector3.zero;
@@ -76,6 +84,14 @@ namespace Kitsuma.Managers
         {
             var necroHealth = necromancer.GetComponent<Health>();
             necroHealth.Heal(float.MaxValue);
+        }
+
+        private void ResetNecromancerAbilities()
+        {
+            var abilities = necromancer.GetComponent<AbilityManager>();
+            abilities.ResetAllCooldowns();
+            var controller = necromancer.GetComponent<EnemyAbilityController>();
+            controller.Reset();
         }
 
         private void ResetNecromancerPosition()

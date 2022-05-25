@@ -8,7 +8,7 @@ namespace Kitsuma.Entities.Shared
     {
         [SerializeField] private float maxHealth = 10f;
         [SerializeField] private float currentHealth = 10f;
-        [SerializeField] private UnityEvent onDeath;
+        [SerializeField] private UnityEvent<string> onDeath;
         [SerializeField] private UnityEvent onHit;
         // onHealthChanged should return a normalized version of current health
         [SerializeField] private UnityEvent<float> onHealthChanged;
@@ -19,13 +19,13 @@ namespace Kitsuma.Entities.Shared
             OnHealthChanged();
         }
 
-        public void Damage(float amount)
+        public void Damage(float amount, string attackerTag)
         {
             if (currentHealth == 0) return;
             currentHealth = Math.Clamp(currentHealth - amount, 0f, maxHealth);
             onHit?.Invoke();
             OnHealthChanged();
-            if (currentHealth == 0) onDeath?.Invoke();
+            if (currentHealth == 0) onDeath?.Invoke(attackerTag);
         }
         
         private void OnHealthChanged()

@@ -47,6 +47,11 @@ namespace Kitsuma.Combat
             _wait = new WaitForSeconds(cooldownTime);
             _onCooldown = false;
         }
+
+        public void ResetCooldown()
+        {
+            _onCooldown = false;
+        }
         
         protected abstract void OnUseAbility(Vector2 target);
     }

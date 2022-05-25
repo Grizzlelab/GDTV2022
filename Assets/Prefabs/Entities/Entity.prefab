@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 4251518464586137362}
   - component: {fileID: 1859617241068011885}
   - component: {fileID: 4039922867261203499}
+  - component: {fileID: 5267505351092695367}
   m_Layer: 0
   m_Name: Entity
   m_TagString: Untagged
@@ -58,7 +59,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 325338768e5e4bc42a021fe599fe196b, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -142,6 +143,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 5267505351092695367}
+        m_TargetAssemblyTypeName: Kitsuma.Utils.Feel.FlashColor, Scripts
+        m_MethodName: Flash
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   onHealthChanged:
     m_PersistentCalls:
       m_Calls:
@@ -208,6 +221,21 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   intensity: 2
   time: 0.1
+--- !u!114 &5267505351092695367
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7362103775803900884}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6a44f0cece79f0a4bb2f07bffea85477, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sprite: {fileID: 9145999437040859654}
+  color: {r: 0.85882354, g: 0.85882354, b: 0.85882354, a: 1}
+  flashTime: 0.1
 --- !u!1001 &4724063116430492392
 PrefabInstance:
   m_ObjectHideFlags: 0

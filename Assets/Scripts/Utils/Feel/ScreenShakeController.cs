@@ -2,18 +2,18 @@ using System.Collections;
 using Cinemachine;
 using UnityEngine;
 
-namespace Kitsuma.Utils
+namespace Kitsuma.Utils.Feel
 {
-    public class ScreenShake : MonoBehaviour
+    public class ScreenShakeController : MonoBehaviour
     {
-        private static ScreenShake _instance;
-        public static ScreenShake Instance
+        private static ScreenShakeController _instance;
+        public static ScreenShakeController Instance
         {
             get
             {
                 if (_instance == null)
                 {
-                    _instance = FindObjectOfType<ScreenShake>();
+                    _instance = FindObjectOfType<ScreenShakeController>();
                 }
                 
                 return _instance;

@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using UnityEngine;
 
@@ -20,11 +21,21 @@ namespace Kitsuma.Utils.Feel
             _originalColor = GetMaterialColor();
         }
 
+        private void OnDisable()
+        {
+            Reset();
+        }
+
         public void Flash()
         {
             if (_flashing) return;
             SetMaterialColor();
             StartCoroutine(WaitCoroutine());
+        }
+
+        public void Reset()
+        {
+            RevertMaterialColor();
         }
 
         private IEnumerator WaitCoroutine()

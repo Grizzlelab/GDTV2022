@@ -44,6 +44,10 @@ PrefabInstance:
       value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 7317662489077434661, guid: a4deba39ec188f14c934a669c12e850c, type: 3}
+      propertyPath: onDeath.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7317662489077434661, guid: a4deba39ec188f14c934a669c12e850c, type: 3}
       propertyPath: onHit.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
       value: 1
       objectReference: {fileID: 0}
@@ -76,6 +80,14 @@ PrefabInstance:
       value: Flash
       objectReference: {fileID: 0}
     - target: {fileID: 7317662489077434661, guid: a4deba39ec188f14c934a669c12e850c, type: 3}
+      propertyPath: onDeath.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7317662489077434661, guid: a4deba39ec188f14c934a669c12e850c, type: 3}
+      propertyPath: onDeath.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: OnPlayerDeath
+      objectReference: {fileID: 0}
+    - target: {fileID: 7317662489077434661, guid: a4deba39ec188f14c934a669c12e850c, type: 3}
       propertyPath: onHit.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
       value: Kitsuma.Utils.Feel.ChangeTime, Scripts
       objectReference: {fileID: 0}
@@ -84,11 +96,19 @@ PrefabInstance:
       value: Kitsuma.Utils.Feel.FlashColor, Scripts
       objectReference: {fileID: 0}
     - target: {fileID: 7317662489077434661, guid: a4deba39ec188f14c934a669c12e850c, type: 3}
+      propertyPath: onDeath.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: Kitsuma.Managers.GameManager, Scripts
+      objectReference: {fileID: 0}
+    - target: {fileID: 7317662489077434661, guid: a4deba39ec188f14c934a669c12e850c, type: 3}
       propertyPath: onHit.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 7317662489077434661, guid: a4deba39ec188f14c934a669c12e850c, type: 3}
       propertyPath: onHit.m_PersistentCalls.m_Calls.Array.data[2].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 7317662489077434661, guid: a4deba39ec188f14c934a669c12e850c, type: 3}
+      propertyPath: onDeath.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 7362103775803900884, guid: a4deba39ec188f14c934a669c12e850c, type: 3}
@@ -289,6 +309,12 @@ MonoBehaviour:
   maxLevel: 99
   currentLevel: 1
   exp: 0
+  onExpGained:
+    m_PersistentCalls:
+      m_Calls: []
+  onLevelGained:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!114 &8967151482801541822 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 5267505351092695367, guid: a4deba39ec188f14c934a669c12e850c, type: 3}

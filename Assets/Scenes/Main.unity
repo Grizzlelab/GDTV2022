@@ -1754,49 +1754,13 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 5441851321783654911, guid: ac9d0c1ec42ccd44b86500d8ffd0dffe, type: 3}
-      propertyPath: m_SortingLayer
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 5829284874991758044, guid: ac9d0c1ec42ccd44b86500d8ffd0dffe, type: 3}
-      propertyPath: onDeath.m_PersistentCalls.m_Calls.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5829284874991758044, guid: ac9d0c1ec42ccd44b86500d8ffd0dffe, type: 3}
-      propertyPath: onDeath.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 5829284874991758044, guid: ac9d0c1ec42ccd44b86500d8ffd0dffe, type: 3}
       propertyPath: onDeath.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 789245228}
-    - target: {fileID: 5829284874991758044, guid: ac9d0c1ec42ccd44b86500d8ffd0dffe, type: 3}
-      propertyPath: onDeath.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 5829284874991758044, guid: ac9d0c1ec42ccd44b86500d8ffd0dffe, type: 3}
-      propertyPath: onDeath.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: OnPlayerDeath
-      objectReference: {fileID: 0}
-    - target: {fileID: 5829284874991758044, guid: ac9d0c1ec42ccd44b86500d8ffd0dffe, type: 3}
-      propertyPath: onDeath.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: Kitsuma.Managers.GameManager, Scripts
-      objectReference: {fileID: 0}
-    - target: {fileID: 5829284874991758044, guid: ac9d0c1ec42ccd44b86500d8ffd0dffe, type: 3}
-      propertyPath: onDeath.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: UnityEngine.Object, UnityEngine
-      objectReference: {fileID: 0}
     - target: {fileID: 5999703548391268397, guid: ac9d0c1ec42ccd44b86500d8ffd0dffe, type: 3}
       propertyPath: m_Name
       value: Player
-      objectReference: {fileID: 0}
-    - target: {fileID: 7398541664065397529, guid: ac9d0c1ec42ccd44b86500d8ffd0dffe, type: 3}
-      propertyPath: exp
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7398541664065397529, guid: ac9d0c1ec42ccd44b86500d8ffd0dffe, type: 3}
-      propertyPath: currentLevel
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ac9d0c1ec42ccd44b86500d8ffd0dffe, type: 3}

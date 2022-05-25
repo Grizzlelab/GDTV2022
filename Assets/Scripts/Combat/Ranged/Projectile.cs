@@ -10,6 +10,7 @@ namespace Kitsuma.Combat.Ranged
         protected string OwnerTag;
         protected float Damage;
         protected float Speed;
+        protected bool Pierces;
         protected bool Initialized;
         protected Vector3 Direction;
 
@@ -19,13 +20,14 @@ namespace Kitsuma.Combat.Ranged
             Move();
         }
 
-        public void Initialize(string ownerTag, Vector3 target, float damage, float speed)
+        public void Initialize(string ownerTag, Vector3 target, float damage, float speed, bool pierces)
         {
             T = transform;
             OwnerTag = ownerTag;
             Target = target;
             Damage = damage;
             Speed = speed;
+            Pierces = pierces;
             Direction = GetDirection(Target);
             Initialized = true;
         }
@@ -45,6 +47,8 @@ namespace Kitsuma.Combat.Ranged
             if (col.gameObject.CompareTag(OwnerTag)) return;
             if (!col.gameObject.TryGetComponent(out Health health)) return;
             health.Damage(Damage, OwnerTag);
+            if (Pierces) return;
+            Destroy(gameObject);
         }
 
         protected abstract void Move();

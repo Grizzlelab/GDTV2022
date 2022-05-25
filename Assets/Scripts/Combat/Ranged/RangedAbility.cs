@@ -7,7 +7,8 @@ namespace Kitsuma.Combat.Ranged
     {
         private const int ProjectileCountUpgradeIncrement = 1;
         private const float SpawnWaitUpgradeDecrement = -1.1f;
-        
+
+        [SerializeField] private bool pierces;
         [SerializeField] private int projectileCount = 1;
         [SerializeField] private float spawnWait = 0.05f;
         [SerializeField] private Projectile projectilePrefab;
@@ -36,7 +37,7 @@ namespace Kitsuma.Combat.Ranged
                 projectilePrefab, 
                 transform.position, 
                 Quaternion.identity);
-            p.Initialize(Owner, target, damage, speed);
+            p.Initialize(Owner, target, damage, speed, pierces);
         }
 
         public override void Upgrade()

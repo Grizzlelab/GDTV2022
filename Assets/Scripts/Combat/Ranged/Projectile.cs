@@ -44,7 +44,7 @@ namespace Kitsuma.Combat.Ranged
         {
             if (col.gameObject.CompareTag(OwnerTag)) return;
             if (!col.gameObject.TryGetComponent(out Health health)) return;
-            health.Damage(Damage);
+            health.Damage(Damage, gameObject.tag);
         }
 
         protected abstract void Move();

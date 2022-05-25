@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 7317662489077434661}
   - component: {fileID: 4251518464586137362}
   - component: {fileID: 1859617241068011885}
+  - component: {fileID: 4039922867261203499}
   m_Layer: 0
   m_Name: Entity
   m_TagString: Untagged
@@ -128,7 +129,19 @@ MonoBehaviour:
       m_Calls: []
   onHit:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 4039922867261203499}
+        m_TargetAssemblyTypeName: Kitsuma.Utils.Feel.ScreenShake, Scripts
+        m_MethodName: Shake
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   onHealthChanged:
     m_PersistentCalls:
       m_Calls:
@@ -181,6 +194,20 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &4039922867261203499
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7362103775803900884}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 117308aa84c548bc9c8f778cd025ede3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  intensity: 2
+  time: 0.1
 --- !u!1001 &4724063116430492392
 PrefabInstance:
   m_ObjectHideFlags: 0

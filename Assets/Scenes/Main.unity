@@ -996,6 +996,7 @@ GameObject:
   m_Component:
   - component: {fileID: 789245227}
   - component: {fileID: 789245228}
+  - component: {fileID: 789245229}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -1038,6 +1039,18 @@ MonoBehaviour:
   lostHeader: You were defeated...
   lostSubheader: Perhaps you'll be able to defeat the necromancer when they inevitably
     revive you?
+--- !u!114 &789245229
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 789245226}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6e7f331d7f1d8cb4ba29914ad9933e5d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &957231348
 GameObject:
   m_ObjectHideFlags: 0

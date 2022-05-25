@@ -1548,6 +1548,7 @@ GameObject:
   - component: {fileID: 1345118623}
   - component: {fileID: 1345118624}
   - component: {fileID: 1345118625}
+  - component: {fileID: 1345118626}
   m_Layer: 0
   m_Name: Virtual Cam
   m_TagString: Untagged
@@ -1621,6 +1622,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 39332badc45c1d14f864452328a0ffec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1345118626
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1345118622}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 34d3e9a1c77243959643a4ce8ec7c383, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  target: {fileID: 1337945905}
+  zoomOnVisible: 6
+  zoomOnNotVisible: 5
+  zoomSpeed: 3
 --- !u!1 &1442045099
 GameObject:
   m_ObjectHideFlags: 0

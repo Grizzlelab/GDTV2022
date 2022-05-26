@@ -12,6 +12,7 @@ namespace Kitsuma.Combat.Ranged
         [SerializeField] private int projectileCount = 1;
         [SerializeField] private float spawnWait = 0.05f;
         [SerializeField] private Projectile projectilePrefab;
+        [SerializeField] private bool randomPlacement;
 
         private WaitForSeconds _wait;
 
@@ -37,6 +38,14 @@ namespace Kitsuma.Combat.Ranged
                 projectilePrefab, 
                 transform.position, 
                 Quaternion.identity);
+            
+            if (randomPlacement)
+            {
+                Transform t = p.transform;
+                Vector2 rand = Random.insideUnitCircle;
+                t.position += new Vector3(rand.x, rand.y, 0f);
+            }
+            
             p.Initialize(Owner, target, damage, speed, pierces);
         }
 

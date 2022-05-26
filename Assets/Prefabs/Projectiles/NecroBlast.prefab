@@ -71,6 +71,34 @@ PrefabInstance:
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: 21300000, guid: b2306575110380c4d8fadf530601b25f, type: 3}
+    - target: {fileID: 5297859058580398725, guid: a690494efbd4f964d9f2be0c4a9523cb, type: 3}
+      propertyPath: onProjectileFired.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5297859058580398725, guid: a690494efbd4f964d9f2be0c4a9523cb, type: 3}
+      propertyPath: onProjectileFired.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5297859058580398725, guid: a690494efbd4f964d9f2be0c4a9523cb, type: 3}
+      propertyPath: onProjectileFired.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 5421975890349584571}
+    - target: {fileID: 5297859058580398725, guid: a690494efbd4f964d9f2be0c4a9523cb, type: 3}
+      propertyPath: onProjectileFired.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5297859058580398725, guid: a690494efbd4f964d9f2be0c4a9523cb, type: 3}
+      propertyPath: onProjectileFired.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: Rotate
+      objectReference: {fileID: 0}
+    - target: {fileID: 5297859058580398725, guid: a690494efbd4f964d9f2be0c4a9523cb, type: 3}
+      propertyPath: onProjectileFired.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: Kitsuma.Utils.FaceTarget, Scripts
+      objectReference: {fileID: 0}
+    - target: {fileID: 5297859058580398725, guid: a690494efbd4f964d9f2be0c4a9523cb, type: 3}
+      propertyPath: onProjectileFired.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a690494efbd4f964d9f2be0c4a9523cb, type: 3}
 --- !u!1 &6769565300092211042 stripped

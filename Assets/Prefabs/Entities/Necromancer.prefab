@@ -195,3 +195,22 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   animationPrefix: Necro
+--- !u!114 &4841513292060873102
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5619248161752005381}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b650639bb8d14c0b9d1d443fc87f6c64, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 10
+  speed: 5
+  cooldownTime: 1
+  pierces: 1
+  projectileCount: 1
+  spawnWait: 0.05
+  projectilePrefab: {fileID: 4014132379654467153, guid: eba901f302ca3da44921dec2d0af56e8, type: 3}

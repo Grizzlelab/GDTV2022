@@ -11,6 +11,7 @@ namespace Kitsuma.Managers
         [SerializeField] private GameObject player;
         [SerializeField] private GameObject necromancer;
         [SerializeField] private GameOverScreen gameOverScreen;
+        [SerializeField] private ExperienceBar expBar;
         [SerializeField] private string wonHeader = "";
         [SerializeField] private string wonSubheader = "";
         [SerializeField] private string lostHeader = "";
@@ -38,6 +39,7 @@ namespace Kitsuma.Managers
         private void OnGameWon()
         {
             DisableEntities();
+            expBar.gameObject.SetActive(false);
             gameOverScreen.gameObject.SetActive(true);
             gameOverScreen.SetHeader(wonHeader);
             gameOverScreen.SetSubHeader(wonSubheader);
@@ -46,6 +48,7 @@ namespace Kitsuma.Managers
         private void OnGameLost()
         {
             DisableEntities();
+            expBar.gameObject.SetActive(false);
             gameOverScreen.gameObject.SetActive(true);
             gameOverScreen.SetHeader(lostHeader);
             gameOverScreen.SetSubHeader(lostSubheader);
@@ -61,6 +64,7 @@ namespace Kitsuma.Managers
             ResetNecromancerPosition();
             EnableEntities();
             gameOverScreen.gameObject.SetActive(false);
+            expBar.gameObject.SetActive(true);
         }
 
         private void HealPlayer()

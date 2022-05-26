@@ -4,12 +4,12 @@ namespace Kitsuma.Movement
 {
     public class FollowTarget : MonoBehaviour
     {
-        [SerializeField] private Transform target;
-        [SerializeField] private float speed = 10f;
-        [SerializeField] private float minDist = 1f;
+        [SerializeField] private float moveSpeed = 20f;
 
         private Transform _t;
-
+        private Transform _target;
+        private bool _isFollowing;
+        
         private void Awake()
         {
             _t = transform;
@@ -17,18 +17,20 @@ namespace Kitsuma.Movement
 
         private void Update()
         {
-            if (IsInRange()) return;
-            _t.position += GetDirectionToTarget() * (speed * Time.deltaTime);
+            if (!_isFollowing) return;
+            Vector3 dir = GetDirectionToTarget();
+            _t.position += dir * (moveSpeed * Time.deltaTime);
         }
 
-        private bool IsInRange()
+        public void Follow(Transform target)
         {
-            return Vector3.Distance(_t.position, target.position) <= minDist;
+            _target = target;
+            _isFollowing = true;
         }
-        
+
         private Vector3 GetDirectionToTarget()
         {
-            return (target.position - _t.position).normalized;
+            return (_target.position - _t.position).normalized;
         }
     }
 }

@@ -1,4 +1,3 @@
-using Kitsuma.Entities.Shared;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -7,7 +6,8 @@ namespace Kitsuma.Combat.Ranged
     public abstract class Projectile : MonoBehaviour
     {
         // Vector3
-        [SerializeField] private UnityEvent<Vector3> onProjectileFired;
+        [SerializeField] protected UnityEvent<Vector3> onProjectileFired;
+        [SerializeField] protected UnityEvent onTargetReached;
 
         protected Transform T;
         protected Vector3 Target;
@@ -44,16 +44,7 @@ namespace Kitsuma.Combat.Ranged
 
         protected bool IsAtTarget()
         {
-            return Vector3.Distance(Target, T.position) < 1f;
-        }
-
-        private void OnTriggerEnter2D(Collider2D col)
-        {
-            if (col.gameObject.CompareTag(OwnerTag)) return;
-            if (!col.gameObject.TryGetComponent(out Health health)) return;
-            health.Damage(Damage, OwnerTag);
-            if (Pierces) return;
-            Destroy(gameObject);
+            return Vector3.Distance(Target, T.position) < Random.Range(0.1f, 1f);
         }
 
         protected abstract void Move();

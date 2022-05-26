@@ -1,10 +1,14 @@
 using Kitsuma.Entities.Shared;
 using UnityEngine;
+using UnityEngine.Events;
 
 namespace Kitsuma.Combat.Ranged
 {
     public abstract class Projectile : MonoBehaviour
     {
+        // Vector3
+        [SerializeField] private UnityEvent<Vector3> onProjectileFired;
+
         protected Transform T;
         protected Vector3 Target;
         protected string OwnerTag;
@@ -30,6 +34,7 @@ namespace Kitsuma.Combat.Ranged
             Pierces = pierces;
             Direction = GetDirection(Target);
             Initialized = true;
+            onProjectileFired?.Invoke(target);
         }
 
         protected Vector3 GetDirection(Vector3 target)

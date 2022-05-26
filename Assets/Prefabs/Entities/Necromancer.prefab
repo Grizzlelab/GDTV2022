@@ -178,9 +178,10 @@ MonoBehaviour:
   damage: 2
   speed: 15
   cooldownTime: 0.25
+  pierces: 0
   projectileCount: 5
   spawnWait: 0.05
-  projectilePrefab: {fileID: 1259675441340021431, guid: c72668b29d08ebd4fa088df7109c4c90, type: 3}
+  projectilePrefab: {fileID: 6259476773644541131, guid: 4549e756b33dd87408fd24db6ea5c8d1, type: 3}
 --- !u!114 &7163995557036454742
 MonoBehaviour:
   m_ObjectHideFlags: 0

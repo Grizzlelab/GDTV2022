@@ -7,39 +7,28 @@ namespace Kitsuma.Entities.Player
     {
         [SerializeField] private int maxLevel = 99;
         [SerializeField] private int currentLevel = 1;
-        [SerializeField] private int exp;
-        // current exp, exp to next level
-        [SerializeField] private UnityEvent<int, int> onExpGained;
-        // level, current exp, exp to next level
-        [SerializeField] private UnityEvent<int, int, int> onLevelGained;
+        // Current experience
+        [SerializeField] private UnityEvent<int> onExpGained;
+        // Current Experience, experience required for the next level
+        [SerializeField] private UnityEvent<int, int> onLevelGained;
 
-        public void AddExperience(int expToAdd)
+        private int _exp;
+
+        public void AddExperience(int exp)
         {
-            if (currentLevel == maxLevel) return;
-            exp += expToAdd;
-            int expToNext = GetExpToNextLevel();
-            onExpGained?.Invoke(exp, expToNext);
-            if (expToNext > exp) return;
+            if (currentLevel >= maxLevel) return;
+            _exp += exp;
+            onExpGained?.Invoke(_exp);
+            if (GetExperienceForLevel(currentLevel + 1) < _exp) return;
+            _exp -= GetExperienceForLevel(currentLevel - 1);
             currentLevel += 1;
-            onLevelGained?.Invoke(currentLevel, exp, expToNext);
+            onLevelGained?.Invoke(_exp, GetExperienceForLevel(currentLevel + 1));
         }
 
-        private int GetExpToNextLevel()
+        private int GetExperienceForLevel(int level)
         {
-            if (currentLevel == maxLevel) return int.MaxValue;
-            return GetExpAtLevel(currentLevel + 1) - exp;
-        }
-
-        private static int GetExpAtLevel(int level)
-        {
-            var total = 0f;
-
-            for (var i = 1; i < level; i++)
-            {
-                total += Mathf.FloorToInt(i + 300 * Mathf.Pow(2, i / 7.0f));
-            }
-            
-            return Mathf.FloorToInt(total / 4f);
+            if (level == maxLevel) return int.MaxValue;
+            return level + 1 * 300;
         }
     }
 }

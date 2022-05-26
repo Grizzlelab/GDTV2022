@@ -18,9 +18,8 @@ namespace Kitsuma.Entities.Player
         {
             if (currentLevel >= maxLevel) return;
             _exp += exp;
-            Debug.Log($"{_exp} / {GetExperienceForLevel(currentLevel + 1)}");
             onExpGained?.Invoke(_exp, GetExperienceForLevel(currentLevel + 1));
-            if (GetExperienceForLevel(currentLevel + 1) < _exp) return;
+            if (GetExperienceForLevel(currentLevel + 1) > _exp) return;
             _exp -= GetExperienceForLevel(currentLevel - 1);
             currentLevel += 1;
             onLevelGained?.Invoke(_exp, GetExperienceForLevel(currentLevel + 1));

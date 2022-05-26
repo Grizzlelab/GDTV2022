@@ -91,6 +91,7 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
   targetTag: Player
+  destroyOnCollide: 1
 --- !u!1 &9193996714233823792
 GameObject:
   m_ObjectHideFlags: 0

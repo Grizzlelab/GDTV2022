@@ -2431,6 +2431,11 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1830167332}
   m_CullTransparentMesh: 1
+--- !u!1 &1870943198 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 9193996714572281680, guid: c26d7c7606e04d7479c626344816a4df, type: 3}
+  m_PrefabInstance: {fileID: 9193996713535452242}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &2056695754
 GameObject:
   m_ObjectHideFlags: 0
@@ -2748,6 +2753,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 6627533445022847970, guid: c26d7c7606e04d7479c626344816a4df, type: 3}
+      propertyPath: objectToDestroy
+      value: 
+      objectReference: {fileID: 1870943198}
+    - target: {fileID: 6627533445022847970, guid: c26d7c7606e04d7479c626344816a4df, type: 3}
+      propertyPath: destroyOnCollide
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 9193996714572281680, guid: c26d7c7606e04d7479c626344816a4df, type: 3}
       propertyPath: m_Name
       value: ExperienceOrb

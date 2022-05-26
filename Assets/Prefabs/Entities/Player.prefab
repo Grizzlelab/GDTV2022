@@ -11,6 +11,10 @@ PrefabInstance:
       propertyPath: m_Controller
       value: 
       objectReference: {fileID: 9100000, guid: 0393a3fbadeae3e43b8291f0ca999175, type: 2}
+    - target: {fileID: 3654525898970063804, guid: a4deba39ec188f14c934a669c12e850c, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.02
+      objectReference: {fileID: 0}
     - target: {fileID: 4251518464586137362, guid: a4deba39ec188f14c934a669c12e850c, type: 3}
       propertyPath: m_Size.x
       value: 0.31598228
@@ -255,6 +259,7 @@ MonoBehaviour:
   projectileCount: 1
   spawnWait: 0.05
   projectilePrefab: {fileID: 1259675441340021431, guid: c72668b29d08ebd4fa088df7109c4c90, type: 3}
+  randomPlacement: 0
 --- !u!114 &5177653525466336181
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -308,7 +313,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxLevel: 99
   currentLevel: 1
-  exp: 0
   onExpGained:
     m_PersistentCalls:
       m_Calls: []

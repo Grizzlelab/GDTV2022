@@ -432,6 +432,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 202668368}
+  - component: {fileID: 202668369}
   m_Layer: 5
   m_Name: ExperienceBar
   m_TagString: Untagged
@@ -460,6 +461,19 @@ RectTransform:
   m_AnchoredPosition: {x: 120, y: -15}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0, y: 0}
+--- !u!114 &202668369
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 202668367}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b9d009b8174891842a515613e4beb65f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bar: {fileID: 557331221}
 --- !u!1 &270866483
 GameObject:
   m_ObjectHideFlags: 0
@@ -985,7 +999,7 @@ RectTransform:
   m_GameObject: {fileID: 557331221}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.5, y: 1, z: 1}
+  m_LocalScale: {x: 0, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 2056695755}
@@ -1951,6 +1965,62 @@ PrefabInstance:
     - target: {fileID: 5999703548391268397, guid: ac9d0c1ec42ccd44b86500d8ffd0dffe, type: 3}
       propertyPath: m_Name
       value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 7398541664065397529, guid: ac9d0c1ec42ccd44b86500d8ffd0dffe, type: 3}
+      propertyPath: onExpGained.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7398541664065397529, guid: ac9d0c1ec42ccd44b86500d8ffd0dffe, type: 3}
+      propertyPath: onLevelGained.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7398541664065397529, guid: ac9d0c1ec42ccd44b86500d8ffd0dffe, type: 3}
+      propertyPath: onExpGained.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7398541664065397529, guid: ac9d0c1ec42ccd44b86500d8ffd0dffe, type: 3}
+      propertyPath: onExpGained.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 202668369}
+    - target: {fileID: 7398541664065397529, guid: ac9d0c1ec42ccd44b86500d8ffd0dffe, type: 3}
+      propertyPath: onLevelGained.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7398541664065397529, guid: ac9d0c1ec42ccd44b86500d8ffd0dffe, type: 3}
+      propertyPath: onLevelGained.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 202668369}
+    - target: {fileID: 7398541664065397529, guid: ac9d0c1ec42ccd44b86500d8ffd0dffe, type: 3}
+      propertyPath: onExpGained.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7398541664065397529, guid: ac9d0c1ec42ccd44b86500d8ffd0dffe, type: 3}
+      propertyPath: onExpGained.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: ChangeValue
+      objectReference: {fileID: 0}
+    - target: {fileID: 7398541664065397529, guid: ac9d0c1ec42ccd44b86500d8ffd0dffe, type: 3}
+      propertyPath: onLevelGained.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7398541664065397529, guid: ac9d0c1ec42ccd44b86500d8ffd0dffe, type: 3}
+      propertyPath: onLevelGained.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: ChangeValue
+      objectReference: {fileID: 0}
+    - target: {fileID: 7398541664065397529, guid: ac9d0c1ec42ccd44b86500d8ffd0dffe, type: 3}
+      propertyPath: onExpGained.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: Kitsuma.UI.ExperienceBar, Scripts
+      objectReference: {fileID: 0}
+    - target: {fileID: 7398541664065397529, guid: ac9d0c1ec42ccd44b86500d8ffd0dffe, type: 3}
+      propertyPath: onLevelGained.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: Kitsuma.UI.ExperienceBar, Scripts
+      objectReference: {fileID: 0}
+    - target: {fileID: 7398541664065397529, guid: ac9d0c1ec42ccd44b86500d8ffd0dffe, type: 3}
+      propertyPath: onExpGained.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 7398541664065397529, guid: ac9d0c1ec42ccd44b86500d8ffd0dffe, type: 3}
+      propertyPath: onLevelGained.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ac9d0c1ec42ccd44b86500d8ffd0dffe, type: 3}

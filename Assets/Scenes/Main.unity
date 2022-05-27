@@ -1839,6 +1839,26 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 5619248161752005381, guid: 4feb09e911e03894b9679794101f14e6, type: 3}
   m_PrefabInstance: {fileID: 1337945904}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1337945921
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1337945906}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b650639bb8d14c0b9d1d443fc87f6c64, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 3
+  speed: 7
+  cooldownTime: 3
+  pierces: 0
+  projectileCount: 1
+  spawnWait: 0.05
+  projectilePrefab: {fileID: 7411029913208203294, guid: 079f0334f7f00104b8519a45d19c0186, type: 3}
+  randomPlacement: 1
 --- !u!1 &1345118622
 GameObject:
   m_ObjectHideFlags: 0
@@ -2166,6 +2186,46 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 5999703548391268397, guid: ac9d0c1ec42ccd44b86500d8ffd0dffe, type: 3}
   m_PrefabInstance: {fileID: 1492419681}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1492419697
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1492419682}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b650639bb8d14c0b9d1d443fc87f6c64, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 2
+  speed: 10
+  cooldownTime: 0.25
+  pierces: 0
+  projectileCount: 1
+  spawnWait: 0.05
+  projectilePrefab: {fileID: 4616558824786373005, guid: fb66655b4834bff4cbfda8e9a042fdbb, type: 3}
+  randomPlacement: 1
+--- !u!114 &1492419712
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1492419682}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b650639bb8d14c0b9d1d443fc87f6c64, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 2
+  speed: 10
+  cooldownTime: 1
+  pierces: 1
+  projectileCount: 1
+  spawnWait: 0.05
+  projectilePrefab: {fileID: 2830781060718758997, guid: 1ab5eba144116674391cbfb57e3b1fad, type: 3}
+  randomPlacement: 1
 --- !u!1 &1505764213
 GameObject:
   m_ObjectHideFlags: 0

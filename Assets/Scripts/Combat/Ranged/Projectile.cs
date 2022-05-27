@@ -1,11 +1,16 @@
-using Kitsuma.Entities.Shared;
 using UnityEngine;
+using UnityEngine.Events;
 
 namespace Kitsuma.Combat.Ranged
 {
     public abstract class Projectile : MonoBehaviour
     {
+        // Vector3
+        [SerializeField] protected UnityEvent<Vector3> onProjectileFired;
+        [SerializeField] protected UnityEvent onTargetReached;
+
         protected Transform T;
+        protected Transform Owner;
         protected Vector3 Target;
         protected string OwnerTag;
         protected float Damage;
@@ -20,9 +25,10 @@ namespace Kitsuma.Combat.Ranged
             Move();
         }
 
-        public void Initialize(string ownerTag, Vector3 target, float damage, float speed, bool pierces)
+        public void Initialize(string ownerTag, Transform owner, Vector3 target, float damage, float speed, bool pierces)
         {
             T = transform;
+            Owner = owner;
             OwnerTag = ownerTag;
             Target = target;
             Damage = damage;
@@ -30,8 +36,14 @@ namespace Kitsuma.Combat.Ranged
             Pierces = pierces;
             Direction = GetDirection(Target);
             Initialized = true;
+            onProjectileFired?.Invoke(target);
         }
 
+        protected void MoveToTarget()
+        {
+            T.position += Direction * (Speed * Time.deltaTime);
+        }
+        
         protected Vector3 GetDirection(Vector3 target)
         {
             return (target - T.position).normalized;
@@ -39,16 +51,7 @@ namespace Kitsuma.Combat.Ranged
 
         protected bool IsAtTarget()
         {
-            return Vector3.Distance(Target, T.position) < 1f;
-        }
-
-        private void OnTriggerEnter2D(Collider2D col)
-        {
-            if (col.gameObject.CompareTag(OwnerTag)) return;
-            if (!col.gameObject.TryGetComponent(out Health health)) return;
-            health.Damage(Damage, OwnerTag);
-            if (Pierces) return;
-            Destroy(gameObject);
+            return Vector3.Distance(Target, T.position) < Random.Range(0.1f, 1f);
         }
 
         protected abstract void Move();

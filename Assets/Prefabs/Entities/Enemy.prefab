@@ -29,10 +29,14 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7317662489077434661, guid: a4deba39ec188f14c934a669c12e850c, type: 3}
       propertyPath: onDeath.m_PersistentCalls.m_Calls.Array.size
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 7317662489077434661, guid: a4deba39ec188f14c934a669c12e850c, type: 3}
       propertyPath: onDeath.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7317662489077434661, guid: a4deba39ec188f14c934a669c12e850c, type: 3}
+      propertyPath: onDeath.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7317662489077434661, guid: a4deba39ec188f14c934a669c12e850c, type: 3}
@@ -40,7 +44,15 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 5989170698841218640}
     - target: {fileID: 7317662489077434661, guid: a4deba39ec188f14c934a669c12e850c, type: 3}
+      propertyPath: onDeath.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: -3628805183554235531}
+    - target: {fileID: 7317662489077434661, guid: a4deba39ec188f14c934a669c12e850c, type: 3}
       propertyPath: onDeath.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7317662489077434661, guid: a4deba39ec188f14c934a669c12e850c, type: 3}
+      propertyPath: onDeath.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 7317662489077434661, guid: a4deba39ec188f14c934a669c12e850c, type: 3}
@@ -48,11 +60,23 @@ PrefabInstance:
       value: Drop
       objectReference: {fileID: 0}
     - target: {fileID: 7317662489077434661, guid: a4deba39ec188f14c934a669c12e850c, type: 3}
+      propertyPath: onDeath.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: DestroySelf
+      objectReference: {fileID: 0}
+    - target: {fileID: 7317662489077434661, guid: a4deba39ec188f14c934a669c12e850c, type: 3}
       propertyPath: onDeath.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
       value: Kitsuma.Entities.Enemies.DropExperience, Scripts
       objectReference: {fileID: 0}
     - target: {fileID: 7317662489077434661, guid: a4deba39ec188f14c934a669c12e850c, type: 3}
+      propertyPath: onDeath.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: Kitsuma.Utils.DestroyOn, Scripts
+      objectReference: {fileID: 0}
+    - target: {fileID: 7317662489077434661, guid: a4deba39ec188f14c934a669c12e850c, type: 3}
       propertyPath: onDeath.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 7317662489077434661, guid: a4deba39ec188f14c934a669c12e850c, type: 3}
+      propertyPath: onDeath.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 7362103775803900884, guid: a4deba39ec188f14c934a669c12e850c, type: 3}
@@ -126,6 +150,18 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 7362103775803900884, guid: a4deba39ec188f14c934a669c12e850c, type: 3}
   m_PrefabInstance: {fileID: 568397966286185607}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &-3628805183554235531
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7045926218441451347}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 30ccde8c797d0e8418ae6ac1a9143a15, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &5989170698841218640
 MonoBehaviour:
   m_ObjectHideFlags: 0

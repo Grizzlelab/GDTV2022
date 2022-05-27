@@ -1282,7 +1282,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 789245228}
         m_TargetAssemblyTypeName: Kitsuma.Managers.GameManager, Scripts
-        m_MethodName: UpgradeAbilities
+        m_MethodName: UnlockRandomAbility
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2165,6 +2165,7 @@ MonoBehaviour:
   gameOverScreen: {fileID: 1620661462}
   expBar: {fileID: 202668369}
   levelUpScreen: {fileID: 964705477}
+  deathUpgradeScreen: {fileID: 1724534283}
   wonHeader: You defeated the necromancer!
   wonSubheader: You've earned your freedom, but the necromancer won't be gone forever...
   lostHeader: You were defeated...

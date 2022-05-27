@@ -79,6 +79,7 @@ namespace Kitsuma.Managers
             deathUpgradeScreen.gameObject.SetActive(true);
             var abilities = player.GetComponent<AbilityManager>();
             deathUpgradeScreen.Show(abilities.HasNewAbilities());
+            Pause();
         }
 
         public void OnNecromancerDeath()
@@ -169,9 +170,10 @@ namespace Kitsuma.Managers
 
         public void UnlockRandomAbility()
         {
-            var abilities = necromancer.GetComponent<AbilityManager>();
+            var abilities = player.GetComponent<AbilityManager>();
             abilities.UnlockRandomAbility();
             deathUpgradeScreen.gameObject.SetActive(false);
+            Unpause();
         }
 
         public void Pause()

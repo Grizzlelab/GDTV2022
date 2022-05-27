@@ -37,6 +37,11 @@ namespace Kitsuma.Combat.Ranged
             onProjectileFired?.Invoke(target);
         }
 
+        protected void MoveToTarget()
+        {
+            T.position += Direction * (Speed * Time.deltaTime);
+        }
+        
         protected Vector3 GetDirection(Vector3 target)
         {
             return (target - T.position).normalized;

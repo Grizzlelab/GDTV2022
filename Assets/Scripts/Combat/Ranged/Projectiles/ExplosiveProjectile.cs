@@ -30,7 +30,7 @@ namespace Kitsuma.Combat.Ranged.Projectiles
                 return;
             }
             
-            T.position += Direction * (Speed * Time.deltaTime);
+            MoveToTarget();
         }
 
         private IEnumerator PulseCoroutine()
@@ -53,11 +53,8 @@ namespace Kitsuma.Combat.Ranged.Projectiles
         }
 
         private void SpawnExplosion()
-        {
-            GameObject obj = Instantiate(
-                explosionPrefab, 
-                T.position, 
-                Quaternion.identity);
+        { 
+            Instantiate(explosionPrefab, T.position, Quaternion.identity);
         }
 
         private void DamageAllNearby()

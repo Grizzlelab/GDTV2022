@@ -7,7 +7,7 @@ namespace Kitsuma.Combat.Ranged.Projectiles
     {
         protected override void Move()
         {
-            T.position += Direction * (Speed * Time.deltaTime);
+            MoveToTarget();
         }
 
         private void OnTriggerEnter2D(Collider2D col)

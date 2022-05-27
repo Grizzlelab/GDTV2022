@@ -46,7 +46,7 @@ namespace Kitsuma.Combat.Ranged
                 t.position += new Vector3(rand.x, rand.y, 0f);
             }
             
-            p.Initialize(Owner, target, damage, speed, pierces);
+            p.Initialize(Owner, T, target, damage, speed, pierces);
         }
 
         public override void Upgrade()

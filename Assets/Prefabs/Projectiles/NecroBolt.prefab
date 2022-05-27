@@ -55,6 +55,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: NecroBolt
       objectReference: {fileID: 0}
+    - target: {fileID: 2576768555825352298, guid: a690494efbd4f964d9f2be0c4a9523cb, type: 3}
+      propertyPath: m_SortingLayer
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2576768555825352298, guid: a690494efbd4f964d9f2be0c4a9523cb, type: 3}
+      propertyPath: m_SortingLayerID
+      value: 280670655
+      objectReference: {fileID: 0}
     - target: {fileID: 5297859058580398725, guid: a690494efbd4f964d9f2be0c4a9523cb, type: 3}
       propertyPath: onProjectileFired.m_PersistentCalls.m_Calls.Array.size
       value: 1

@@ -10,6 +10,7 @@ namespace Kitsuma.Combat.Ranged
         [SerializeField] protected UnityEvent onTargetReached;
 
         protected Transform T;
+        protected Transform Owner;
         protected Vector3 Target;
         protected string OwnerTag;
         protected float Damage;
@@ -24,9 +25,10 @@ namespace Kitsuma.Combat.Ranged
             Move();
         }
 
-        public void Initialize(string ownerTag, Vector3 target, float damage, float speed, bool pierces)
+        public void Initialize(string ownerTag, Transform owner, Vector3 target, float damage, float speed, bool pierces)
         {
             T = transform;
+            Owner = owner;
             OwnerTag = ownerTag;
             Target = target;
             Damage = damage;

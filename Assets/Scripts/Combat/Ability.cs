@@ -14,13 +14,15 @@ namespace Kitsuma.Combat
         [SerializeField] protected float speed = 10f;
         [SerializeField] protected float cooldownTime = 0.25f;
 
+        protected Transform T;
         protected string Owner;
         
         private bool _onCooldown;
         private WaitForSeconds _wait;
 
         private void Awake()
-        { 
+        {
+            T = transform;
             Owner = gameObject.tag;
         }
 

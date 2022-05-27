@@ -8,6 +8,20 @@ namespace Kitsuma.Managers
 {
     public class GameManager : MonoBehaviour
     {
+        private static GameManager _instance;
+        public static GameManager Instance
+        {
+            get
+            {
+                if (_instance == null)
+                {
+                    _instance = FindObjectOfType<GameManager>();
+                }
+                
+                return _instance;
+            }
+        }
+
         [SerializeField] private GameObject player;
         [SerializeField] private GameObject necromancer;
         [SerializeField] private GameOverScreen gameOverScreen;
@@ -115,5 +129,8 @@ namespace Kitsuma.Managers
             player.SetActive(false);
             necromancer.SetActive(false);
         }
+
+        public GameObject GetPlayer() => player;
+        public GameObject GetNecro() => necromancer;
     }
 }

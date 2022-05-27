@@ -27,6 +27,7 @@ namespace Kitsuma.Managers
         [SerializeField] private GameOverScreen gameOverScreen;
         [SerializeField] private ExperienceBar expBar;
         [SerializeField] private GameObject levelUpScreen;
+        [SerializeField] private DeathUpgradeScreen deathUpgradeScreen;
         [SerializeField] private string wonHeader = "";
         [SerializeField] private string wonSubheader = "";
         [SerializeField] private string lostHeader = "";
@@ -45,6 +46,7 @@ namespace Kitsuma.Managers
             var playerHealth = player.GetComponent<Health>();
             playerHealth.Upgrade();
             levelUpScreen.SetActive(false);
+            deathUpgradeScreen.gameObject.SetActive(false);
             Unpause();
         }
 
@@ -53,6 +55,7 @@ namespace Kitsuma.Managers
             var playerAbilities = player.GetComponent<AbilityManager>();
             playerAbilities.UpgradeAllAbilities();
             levelUpScreen.SetActive(false);
+            deathUpgradeScreen.gameObject.SetActive(false);
             Unpause();
         }
         
@@ -64,10 +67,18 @@ namespace Kitsuma.Managers
             }
             else
             {
+                ShowDeathUpgradeScreen();
                 HealPlayer();
                 ResetPlayerPosition();
                 HealNecromancer();
             }
+        }
+
+        private void ShowDeathUpgradeScreen()
+        {
+            deathUpgradeScreen.gameObject.SetActive(true);
+            var abilities = player.GetComponent<AbilityManager>();
+            deathUpgradeScreen.Show(abilities.HasNewAbilities());
         }
 
         public void OnNecromancerDeath()
@@ -116,7 +127,7 @@ namespace Kitsuma.Managers
         private void ResetPlayerAbilities()
         {
             var abilities = player.GetComponent<AbilityManager>();
-            abilities.ResetAllCooldowns();
+            abilities.ResetAllAbilities();
         }
 
         private void ResetPlayerPosition()
@@ -154,6 +165,13 @@ namespace Kitsuma.Managers
         {
             player.SetActive(false);
             necromancer.SetActive(false);
+        }
+
+        public void UnlockRandomAbility()
+        {
+            var abilities = necromancer.GetComponent<AbilityManager>();
+            abilities.UnlockRandomAbility();
+            deathUpgradeScreen.gameObject.SetActive(false);
         }
 
         public void Pause()

@@ -17,6 +17,7 @@ namespace Kitsuma.Combat
             _abilities = new List<Ability>();
             _abilities.AddRange(GetComponents<Ability>());
             _inactiveAbilities = _abilities;
+            _inactiveAbilities.Remove(defaultAbility);
             _activeAbilities = hasAllAbilities ? _abilities : new List<Ability> { defaultAbility };
         }
 
@@ -36,6 +37,19 @@ namespace Kitsuma.Combat
             }
         }
 
+        public void ResetAllAbilities()
+        {
+            _activeAbilities = hasAllAbilities ? _abilities : new List<Ability> { defaultAbility };
+            _inactiveAbilities = _abilities;
+            
+            foreach (Ability ability in _abilities)
+            {
+                ability.ResetLevels();
+            }
+            
+            ResetAllCooldowns();
+        }
+        
         public void ResetAllCooldowns()
         {
             foreach (Ability ability in _abilities)
@@ -44,6 +58,15 @@ namespace Kitsuma.Combat
             }
         }
 
+        public void UnlockRandomAbility()
+        {
+            Ability a = _inactiveAbilities[Random.Range(0, _inactiveAbilities.Count)];
+            if (a == null) return;
+            _inactiveAbilities.Remove(a);
+            _activeAbilities.Add(a);
+        }
+        
+        public bool HasNewAbilities() => _inactiveAbilities.Count > 0;
         public List<Ability> GetAbilities() => _abilities;
     }
 }

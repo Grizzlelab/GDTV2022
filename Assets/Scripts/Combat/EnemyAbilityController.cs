@@ -13,6 +13,7 @@ namespace Kitsuma.Combat
         private Transform _t;
         private WaitForSeconds _wait;
         private bool _isOnCooldown;
+        private bool _paused;
 
         private void Awake()
         {
@@ -23,7 +24,7 @@ namespace Kitsuma.Combat
 
         private void Update()
         {
-            if (!IsNearTarget() || _isOnCooldown) return;
+            if (!IsNearTarget() || _isOnCooldown || _paused) return;
             _abilities.UseAbilities(target.position);
             StartCoroutine(WaitCoroutine());
         }
@@ -45,5 +46,8 @@ namespace Kitsuma.Combat
         {
             _isOnCooldown = false;
         }
+
+        public void Pause() => _paused = true;
+        public void Unpause() => _paused = false;
     }
 }

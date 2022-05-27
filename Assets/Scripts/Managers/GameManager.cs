@@ -32,9 +32,12 @@ namespace Kitsuma.Managers
         [SerializeField] private string lostHeader = "";
         [SerializeField] private string lostSubheader = "";
 
+        private bool _isPaused;
+        
         public void OnLevelUp()
         {
             levelUpScreen.SetActive(true);
+            Pause();
         }
         
         public void OnUpgradeHealth()
@@ -42,6 +45,7 @@ namespace Kitsuma.Managers
             var playerHealth = player.GetComponent<Health>();
             playerHealth.Upgrade();
             levelUpScreen.SetActive(false);
+            Unpause();
         }
 
         public void UpgradeAbilities()
@@ -49,6 +53,7 @@ namespace Kitsuma.Managers
             var playerAbilities = player.GetComponent<AbilityManager>();
             playerAbilities.UpgradeAllAbilities();
             levelUpScreen.SetActive(false);
+            Unpause();
         }
         
         public void OnPlayerDeath(string killerTag)
@@ -151,6 +156,23 @@ namespace Kitsuma.Managers
             necromancer.SetActive(false);
         }
 
+        public void Pause()
+        {
+            _isPaused = true;
+            Time.timeScale = 0;
+            player.GetComponent<PlayerAbilityController>().Pause();
+            necromancer.GetComponent<EnemyAbilityController>().Pause();
+        }
+
+        public void Unpause()
+        {
+            _isPaused = false;
+            Time.timeScale = 1f;
+            player.GetComponent<PlayerAbilityController>().Unpause();
+            necromancer.GetComponent<EnemyAbilityController>().Unpause();
+        }
+
+        public bool GetIsPaused() => _isPaused;
         public GameObject GetPlayer() => player;
         public GameObject GetNecro() => necromancer;
     }

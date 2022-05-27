@@ -1,4 +1,3 @@
-using System;
 using System.Collections;
 using UnityEngine;
 
@@ -64,6 +63,8 @@ namespace Kitsuma.Combat
 
         public void ResetLevels()
         {
+            if (level <= 1) return;
+            
             for (int i = level; i >= 0; i--)
             {
                 Downgrade();

@@ -26,11 +26,36 @@ namespace Kitsuma.Managers
         [SerializeField] private GameObject necromancer;
         [SerializeField] private GameOverScreen gameOverScreen;
         [SerializeField] private ExperienceBar expBar;
+        [SerializeField] private GameObject levelUpScreen;
         [SerializeField] private string wonHeader = "";
         [SerializeField] private string wonSubheader = "";
         [SerializeField] private string lostHeader = "";
         [SerializeField] private string lostSubheader = "";
 
+        private bool _isPaused;
+        
+        public void OnLevelUp()
+        {
+            levelUpScreen.SetActive(true);
+            Pause();
+        }
+        
+        public void OnUpgradeHealth()
+        {
+            var playerHealth = player.GetComponent<Health>();
+            playerHealth.Upgrade();
+            levelUpScreen.SetActive(false);
+            Unpause();
+        }
+
+        public void UpgradeAbilities()
+        {
+            var playerAbilities = player.GetComponent<AbilityManager>();
+            playerAbilities.UpgradeAllAbilities();
+            levelUpScreen.SetActive(false);
+            Unpause();
+        }
+        
         public void OnPlayerDeath(string killerTag)
         {
             if (necromancer.CompareTag(killerTag))
@@ -84,6 +109,7 @@ namespace Kitsuma.Managers
         private void HealPlayer()
         {
             var playerHealth = player.GetComponent<Health>();
+            playerHealth.ResetMaxHealth(10f);
             playerHealth.Heal(float.MaxValue);
         }
 
@@ -130,6 +156,23 @@ namespace Kitsuma.Managers
             necromancer.SetActive(false);
         }
 
+        public void Pause()
+        {
+            _isPaused = true;
+            Time.timeScale = 0;
+            player.GetComponent<PlayerAbilityController>().Pause();
+            necromancer.GetComponent<EnemyAbilityController>().Pause();
+        }
+
+        public void Unpause()
+        {
+            _isPaused = false;
+            Time.timeScale = 1f;
+            player.GetComponent<PlayerAbilityController>().Unpause();
+            necromancer.GetComponent<EnemyAbilityController>().Unpause();
+        }
+
+        public bool GetIsPaused() => _isPaused;
         public GameObject GetPlayer() => player;
         public GameObject GetNecro() => necromancer;
     }

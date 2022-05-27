@@ -1,4 +1,5 @@
 using Kitsuma.Entities.Shared;
+using Kitsuma.Managers;
 using UnityEngine;
 
 namespace Kitsuma.Combat.Ranged.Projectiles
@@ -12,6 +13,7 @@ namespace Kitsuma.Combat.Ranged.Projectiles
 
         private void OnTriggerEnter2D(Collider2D col)
         {
+            if (GameManager.Instance.GetIsPaused()) return;
             if (col.gameObject.CompareTag(OwnerTag)) return;
             if (!col.gameObject.TryGetComponent(out Health health)) return;
             health.Damage(Damage, OwnerTag);

@@ -56,5 +56,13 @@ namespace Kitsuma.Combat.Ranged
             spawnWait *= SpawnWaitUpgradeDecrement;
             _wait = new WaitForSeconds(spawnWait);
         }
+
+        protected override void Downgrade()
+        {
+            base.Downgrade();
+            projectileCount -= ProjectileCountUpgradeIncrement;
+            spawnWait *= -SpawnWaitUpgradeDecrement;
+            _wait = new WaitForSeconds(spawnWait);
+        }
     }
 }

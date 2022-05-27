@@ -178,3 +178,19 @@ MonoBehaviour:
   amountToDrop: 1
   randomizedPosition: 1
   randomRadius: 1
+--- !u!114 &3524434084533763700
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7045926218441451347}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6dd4f444f68cc56479c1a660e31fcd29, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 2
+  tagToHurt: Player
+  radius: 1
+  checkTime: 0.5

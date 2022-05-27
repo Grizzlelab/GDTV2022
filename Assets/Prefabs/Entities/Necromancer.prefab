@@ -163,6 +163,27 @@ MonoBehaviour:
   spawnWait: 0.05
   projectilePrefab: {fileID: 4014132379654467153, guid: eba901f302ca3da44921dec2d0af56e8, type: 3}
   randomPlacement: 1
+--- !u!114 &5516911587965214424
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5619248161752005381}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b650639bb8d14c0b9d1d443fc87f6c64, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 3
+  speed: 7
+  cooldownTime: 3
+  level: 1
+  pierces: 0
+  projectileCount: 1
+  spawnWait: 0.05
+  projectilePrefab: {fileID: 7411029913208203294, guid: 079f0334f7f00104b8519a45d19c0186, type: 3}
+  randomPlacement: 1
 --- !u!114 &6591932318931922270
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -225,3 +246,24 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   animationPrefix: Necro
+--- !u!114 &708919100555268017
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5619248161752005381}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b650639bb8d14c0b9d1d443fc87f6c64, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 1
+  speed: 15
+  cooldownTime: 3
+  level: 1
+  pierces: 0
+  projectileCount: 3
+  spawnWait: 0.05
+  projectilePrefab: {fileID: 9180459191668736364, guid: 0e1afde92207c7045b7a089196439a44, type: 3}
+  randomPlacement: 1

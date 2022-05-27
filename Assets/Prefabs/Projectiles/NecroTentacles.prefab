@@ -12,6 +12,14 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3487486691975461341, guid: 81829e44d6b7bb9489eec3c16ab68916, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3487486691975461341, guid: 81829e44d6b7bb9489eec3c16ab68916, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3487486691975461341, guid: 81829e44d6b7bb9489eec3c16ab68916, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
       objectReference: {fileID: 0}
@@ -53,7 +61,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3487486691975461342, guid: 81829e44d6b7bb9489eec3c16ab68916, type: 3}
       propertyPath: m_Name
-      value: EruptionProjectile
+      value: NecroTentacles
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 81829e44d6b7bb9489eec3c16ab68916, type: 3}

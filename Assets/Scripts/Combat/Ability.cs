@@ -13,10 +13,12 @@ namespace Kitsuma.Combat
         [SerializeField] protected float damage = 2f;
         [SerializeField] protected float speed = 10f;
         [SerializeField] protected float cooldownTime = 0.25f;
+        [SerializeField] protected bool active;
+        [SerializeField] protected int level = 1;
 
         protected Transform T;
         protected string Owner;
-        
+
         private bool _onCooldown;
         private WaitForSeconds _wait;
 
@@ -28,7 +30,7 @@ namespace Kitsuma.Combat
 
         public void Use(Vector2 target)
         {
-            if (_onCooldown) return;
+            if (_onCooldown || !active) return;
             OnUseAbility(target);
             StartCoroutine(AbilityCooldownCoroutine());
         }
@@ -48,6 +50,25 @@ namespace Kitsuma.Combat
             cooldownTime *= CooldownUpgradeDecrement;
             _wait = new WaitForSeconds(cooldownTime);
             _onCooldown = false;
+            level++;
+        }
+
+        public virtual void Downgrade()
+        {
+            damage *= -DamageUpgradeIncrement;
+            speed *= -SpeedUpgradeIncrement;
+            cooldownTime *= -CooldownUpgradeDecrement;
+            _wait = new WaitForSeconds(cooldownTime);
+            _onCooldown = false;
+            level--;
+        }
+
+        public void ResetLevels()
+        {
+            for (int i = level; i >= 0; i--)
+            {
+                Downgrade();
+            }
         }
 
         public void ResetCooldown()

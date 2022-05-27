@@ -5,7 +5,11 @@ namespace Kitsuma.Combat
 {
     public class AbilityManager : MonoBehaviour
     {
+        [SerializeField] private Ability defaultAbility;
+
         private List<Ability> _abilities;
+        private List<Ability> _inactiveAbilities;
+        private List<Ability> _activeAbilities;
 
         private void Awake()
         {

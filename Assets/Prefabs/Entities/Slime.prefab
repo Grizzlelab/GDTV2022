@@ -225,7 +225,7 @@ MonoBehaviour:
   animator: {fileID: 8293751003247959156}
   restAnim: Slime_Rest
   lurchAnim: Slime_Lurch
-  speed: 5
+  speed: 3
   restTime: 0.35
   lurchTime: 0.5
   onMovement:

@@ -255,6 +255,8 @@ MonoBehaviour:
   damage: 2
   speed: 15
   cooldownTime: 0.25
+  active: 0
+  level: 1
   pierces: 0
   projectileCount: 1
   spawnWait: 0.05
@@ -272,6 +274,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aa1459bd68ce4964b8c6bbbf8519a2eb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  defaultAbility: {fileID: 4357745534843902446}
+  hasAllAbilities: 0
 --- !u!114 &6456676597114639149
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -6,6 +6,8 @@ namespace Kitsuma.Entities.Shared
 {
     public class Health : MonoBehaviour
     {
+        private const float HealthUpgradeAmount = 10f;
+        
         [SerializeField] private float maxHealth = 10f;
         [SerializeField] private float currentHealth = 10f;
         [SerializeField] private UnityEvent<string> onDeath;
@@ -26,6 +28,17 @@ namespace Kitsuma.Entities.Shared
             onHit?.Invoke();
             OnHealthChanged();
             if (currentHealth == 0) onDeath?.Invoke(attackerTag);
+        }
+
+        public void ResetMaxHealth(float amount)
+        {
+            maxHealth = amount;
+        }
+
+        public void Upgrade()
+        {
+            maxHealth += HealthUpgradeAmount;
+            Heal(float.MaxValue);
         }
         
         private void OnHealthChanged()

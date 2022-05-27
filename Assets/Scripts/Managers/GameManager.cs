@@ -26,11 +26,31 @@ namespace Kitsuma.Managers
         [SerializeField] private GameObject necromancer;
         [SerializeField] private GameOverScreen gameOverScreen;
         [SerializeField] private ExperienceBar expBar;
+        [SerializeField] private GameObject levelUpScreen;
         [SerializeField] private string wonHeader = "";
         [SerializeField] private string wonSubheader = "";
         [SerializeField] private string lostHeader = "";
         [SerializeField] private string lostSubheader = "";
 
+        public void OnLevelUp()
+        {
+            levelUpScreen.SetActive(true);
+        }
+        
+        public void OnUpgradeHealth()
+        {
+            var playerHealth = player.GetComponent<Health>();
+            playerHealth.Upgrade();
+            levelUpScreen.SetActive(false);
+        }
+
+        public void UpgradeAbilities()
+        {
+            var playerAbilities = player.GetComponent<AbilityManager>();
+            playerAbilities.UpgradeAllAbilities();
+            levelUpScreen.SetActive(false);
+        }
+        
         public void OnPlayerDeath(string killerTag)
         {
             if (necromancer.CompareTag(killerTag))
@@ -84,6 +104,7 @@ namespace Kitsuma.Managers
         private void HealPlayer()
         {
             var playerHealth = player.GetComponent<Health>();
+            playerHealth.ResetMaxHealth(10f);
             playerHealth.Heal(float.MaxValue);
         }
 

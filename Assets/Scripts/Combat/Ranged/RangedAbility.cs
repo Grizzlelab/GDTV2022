@@ -57,7 +57,7 @@ namespace Kitsuma.Combat.Ranged
             _wait = new WaitForSeconds(spawnWait);
         }
 
-        public override void Downgrade()
+        protected override void Downgrade()
         {
             base.Downgrade();
             projectileCount -= ProjectileCountUpgradeIncrement;

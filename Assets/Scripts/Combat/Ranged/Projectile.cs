@@ -1,5 +1,7 @@
+using System;
 using UnityEngine;
 using UnityEngine.Events;
+using Random = UnityEngine.Random;
 
 namespace Kitsuma.Combat.Ranged
 {
@@ -18,11 +20,18 @@ namespace Kitsuma.Combat.Ranged
         protected bool Pierces;
         protected bool Initialized;
         protected Vector3 Direction;
+        protected Action<Projectile> OnRelease;
+        private bool IsReleased;
 
         private void Update()
         {
             if (!Initialized) return;
             Move();
+        }
+
+        private void OnEnable()
+        {
+            IsReleased = false;
         }
 
         public void Initialize(string ownerTag, Transform owner, Vector3 target, float damage, float speed, bool pierces)
@@ -52,6 +61,18 @@ namespace Kitsuma.Combat.Ranged
         protected bool IsAtTarget()
         {
             return Vector3.Distance(Target, T.position) < Random.Range(0.1f, 1f);
+        }
+
+        public void SetOnRelease(Action<Projectile> onRelease)
+        {
+            OnRelease = onRelease;
+        }
+
+        public void Release()
+        {
+            if (IsReleased) return;
+            IsReleased = true;
+            OnRelease(this);
         }
 
         protected abstract void Move();

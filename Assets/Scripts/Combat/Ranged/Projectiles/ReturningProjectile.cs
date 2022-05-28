@@ -36,7 +36,7 @@ namespace Kitsuma.Combat.Ranged.Projectiles
             {
                 if (col.CompareTag(OwnerTag))
                 {
-                    Destroy(gameObject);
+                    Release();
                     return;
                 }
             }

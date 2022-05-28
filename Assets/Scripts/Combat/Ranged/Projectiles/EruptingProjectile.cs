@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using Kitsuma.Entities.Shared;
 using UnityEngine;
@@ -25,7 +26,12 @@ namespace Kitsuma.Combat.Ranged.Projectiles
             _visibleWait = new WaitForSeconds(visibleWaitTime);
             _pulseTime = new WaitForSeconds(damagePulseTime);
         }
-        
+
+        private void OnDisable()
+        {
+            _shouldMove = true;
+        }
+
         protected override void Move()
         {
             if (!_shouldMove) return;
@@ -52,7 +58,7 @@ namespace Kitsuma.Combat.Ranged.Projectiles
         private IEnumerator EruptCoroutine()
         {
             yield return _visibleWait;
-            Destroy(gameObject);
+            Release();
         }
 
         private IEnumerator PulseCoroutine()

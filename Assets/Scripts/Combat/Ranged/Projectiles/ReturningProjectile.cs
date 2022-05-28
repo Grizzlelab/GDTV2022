@@ -16,6 +16,11 @@ namespace Kitsuma.Combat.Ranged.Projectiles
                 SetReturnDirection();
             }
 
+            if (_isReturning)
+            {
+                SetReturnDirection();
+            }
+
             T.position += Direction * (Speed * Time.deltaTime);
         }
 
@@ -29,12 +34,19 @@ namespace Kitsuma.Combat.Ranged.Projectiles
             if (GameManager.Instance.GetIsPaused()) return;
             if (_isReturning)
             {
-                if (!col.CompareTag(OwnerTag)) return;
-                Destroy(gameObject);
-                return;
+                if (col.CompareTag(OwnerTag))
+                {
+                    Destroy(gameObject);
+                    return;
+                }
             }
 
             if (col.CompareTag(OwnerTag)) return;
+            DamageCollider(col);
+        }
+
+        private void DamageCollider(Collider2D col)
+        {
             if (!col.gameObject.TryGetComponent(out Health health)) return;
             health.Damage(Damage, OwnerTag);
         }

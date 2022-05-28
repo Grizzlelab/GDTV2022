@@ -20,7 +20,7 @@ namespace Kitsuma.Entities.Player
             _exp += exp;
             onExpGained?.Invoke(_exp, GetExperienceForLevel(currentLevel + 1));
             if (GetExperienceForLevel(currentLevel + 1) > _exp) return;
-            _exp -= GetExperienceForLevel(currentLevel - 1);
+            _exp = 0;
             currentLevel += 1;
             onLevelGained?.Invoke(_exp, GetExperienceForLevel(currentLevel + 1));
         }
@@ -28,7 +28,7 @@ namespace Kitsuma.Entities.Player
         private int GetExperienceForLevel(int level)
         {
             if (level == maxLevel) return int.MaxValue;
-            return level + 1 * 300;
+            return (level + 1) * 150;
         }
     }
 }

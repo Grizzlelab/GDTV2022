@@ -2196,12 +2196,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3fdbd583eb59b6349910f4fc333dbd8e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mobPrefabs:
+  prefabs:
   - {fileID: 6367565757856622188, guid: e75348f26279e2746859d475757edd45, type: 3}
   - {fileID: 7597348322159874766, guid: 465e0006c3b88474e97404c6fd1c2e42, type: 3}
-  radiusAroundPlayer: 10
-  startCapacity: 25
+  minCapacity: 10
   maxCapacity: 50
+  radiusAroundPlayer: 10
   spawnWait: 1
 --- !u!1 &957231348
 GameObject:

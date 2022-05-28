@@ -18,6 +18,16 @@ namespace Kitsuma.Utils
 
         private void Start()
         {
+            SetRandomScale();
+        }
+
+        private void OnDisable()
+        {
+            SetRandomScale();
+        }
+        
+        private void SetRandomScale()
+        {
             _t.localScale = new Vector3(
                 Random.Range(minScale.x, maxScale.x),
                 Random.Range(minScale.y, maxScale.y),

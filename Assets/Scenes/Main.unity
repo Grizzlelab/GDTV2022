@@ -2224,7 +2224,7 @@ MonoBehaviour:
   - {fileID: 5252168234662768003, guid: 10399ccb22e94e144ad64163e5888e56, type: 3}
   minCapacity: 10
   maxCapacity: 20
-  radiusAroundPlayer: 5
+  radiusAroundPlayer: 10
   spawnWait: 1
   batchSpawn: 2
 --- !u!1 &957231348

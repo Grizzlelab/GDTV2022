@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using UnityEngine;
 using UnityEngine.Pool;
@@ -14,6 +15,7 @@ namespace Kitsuma.Combat.Ranged
         [SerializeField] private int maxPool = 15;
         [SerializeField] private bool pierces;
         [SerializeField] private int projectileCount = 1;
+        [SerializeField] private int maxProjectiles = 5;
         [SerializeField] private float spawnWait = 0.05f;
         [SerializeField] private Projectile projectilePrefab;
         [SerializeField] private bool randomPlacement;
@@ -68,7 +70,10 @@ namespace Kitsuma.Combat.Ranged
         public override void Upgrade()
         {
             base.Upgrade();
-            projectileCount += ProjectileCountUpgradeIncrement;
+            projectileCount = Math.Clamp(
+                projectileCount + ProjectileCountUpgradeIncrement, 
+                0, 
+                maxProjectiles);
             spawnWait *= SpawnWaitUpgradeDecrement;
             _wait = new WaitForSeconds(spawnWait);
         }

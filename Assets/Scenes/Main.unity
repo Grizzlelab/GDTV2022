@@ -2202,7 +2202,6 @@ MonoBehaviour:
   radiusAroundPlayer: 10
   startCapacity: 25
   maxCapacity: 50
-  spawnBatches: 10
   spawnWait: 1
 --- !u!1 &957231348
 GameObject:

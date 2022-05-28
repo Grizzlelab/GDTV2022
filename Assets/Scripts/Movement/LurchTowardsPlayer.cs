@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using Kitsuma.Managers;
 using UnityEngine;
@@ -21,6 +22,7 @@ namespace Kitsuma.Movement
         private WaitForSeconds _rest;
         private WaitForSeconds _lurch;
         private bool _canMove;
+        private bool _hasBeenDisabled;
 
         private void Awake()
         {
@@ -33,8 +35,20 @@ namespace Kitsuma.Movement
             StartCoroutine(RestCoroutine());
         }
 
+        private void OnDisable()
+        {
+            _hasBeenDisabled = true;
+        }
+
         private void Update()
         {
+            if (_hasBeenDisabled)
+            {
+                _hasBeenDisabled = false;
+                _canMove = false;
+                StartCoroutine(RestCoroutine());
+            }
+            
             if (!_canMove || IsAtPlayer()) return;
             Vector3 dir = GetDirectionToPlayer();
             _t.position += dir * (speed * Time.deltaTime);

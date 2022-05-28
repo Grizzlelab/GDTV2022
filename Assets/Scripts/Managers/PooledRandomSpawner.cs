@@ -34,7 +34,7 @@ namespace Kitsuma.Managers
             Pool = new ObjectPool<GameObject>(
                 () => Instantiate(prefabs[Random.Range(0, prefabs.Length)]),
                 OnCreate,
-                obj => obj.SetActive(false),
+                obj =>obj.SetActive(false), 
                 Destroy, true, minCapacity, maxCapacity);
         }
         

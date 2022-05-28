@@ -11,6 +11,8 @@ GameObject:
   - component: {fileID: 1185500021261965543}
   - component: {fileID: 1185500021261965536}
   - component: {fileID: 2728468878714482206}
+  - component: {fileID: 2684321350265425244}
+  - component: {fileID: 5003422058890169366}
   m_Layer: 0
   m_Name: EnvironmentObject
   m_TagString: Environment
@@ -99,3 +101,43 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   minScale: {x: 1, y: 1, z: 1}
   maxScale: {x: 3, y: 3, z: 1}
+--- !u!114 &2684321350265425244
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1185500021261965537}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e924e0c941f44446b48349ef1dc05404, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  distance: 20
+  onTooFar:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 5003422058890169366}
+        m_TargetAssemblyTypeName: Kitsuma.Utils.Release, Scripts
+        m_MethodName: OnRelease
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &5003422058890169366
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1185500021261965537}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c522e87628254f68a40a2a108f61f4b6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

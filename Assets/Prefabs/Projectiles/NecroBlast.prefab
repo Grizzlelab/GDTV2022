@@ -99,7 +99,8 @@ PrefabInstance:
       propertyPath: onProjectileFired.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 218935066502929166, guid: a690494efbd4f964d9f2be0c4a9523cb, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: a690494efbd4f964d9f2be0c4a9523cb, type: 3}
 --- !u!1 &6769565300092211042 stripped
 GameObject:

@@ -18,7 +18,7 @@ namespace Kitsuma.Combat.Ranged.Projectiles
             if (!col.gameObject.TryGetComponent(out Health health)) return;
             health.Damage(Damage, OwnerTag);
             if (Pierces) return;
-            Destroy(gameObject);
+            Release();
         }
     }
 }

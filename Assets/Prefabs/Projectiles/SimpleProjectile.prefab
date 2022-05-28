@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 2576768554673701813}
   - component: {fileID: 3492997588699077782}
   - component: {fileID: 5297859058580398725}
-  - component: {fileID: 218935066502929166}
+  - component: {fileID: 105099448090882242}
   m_Layer: 0
   m_Name: SimpleProjectile
   m_TagString: Untagged
@@ -69,7 +69,7 @@ MonoBehaviour:
   onTargetReached:
     m_PersistentCalls:
       m_Calls: []
---- !u!114 &218935066502929166
+--- !u!114 &105099448090882242
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -78,10 +78,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 2576768554673701814}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cdc0c6872da3479c9548b42805e91c01, type: 3}
+  m_Script: {fileID: 11500000, guid: 1203bdc612084d9e8a4a549d7f67dd1e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  destroyAfterTime: 2
+  time: 0.75
 --- !u!1 &2576768555825352300
 GameObject:
   m_ObjectHideFlags: 0
@@ -153,7 +153,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 280670655
-  m_SortingLayer: 3
+  m_SortingLayer: 4
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 26e8bcb58ee78c74f9a050a8f973d464, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}

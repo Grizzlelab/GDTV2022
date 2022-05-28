@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using Kitsuma.Entities.Shared;
 using UnityEngine;
@@ -33,6 +34,11 @@ namespace Kitsuma.Combat.Ranged.Projectiles
             MoveToTarget();
         }
 
+        private void OnDisable()
+        {
+            _shouldMove = true;
+        }
+
         private IEnumerator PulseCoroutine()
         {
             _pulseWait ??= new WaitForSeconds(pulseTime);
@@ -49,7 +55,7 @@ namespace Kitsuma.Combat.Ranged.Projectiles
             onExploded?.Invoke();
             DamageAllNearby();
             SpawnExplosion();
-            Destroy(gameObject);
+            Release();
         }
 
         private void SpawnExplosion()

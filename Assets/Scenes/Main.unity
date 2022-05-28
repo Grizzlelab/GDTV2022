@@ -1828,6 +1828,22 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2884457624692301363, guid: ac9d0c1ec42ccd44b86500d8ffd0dffe, type: 3}
+      propertyPath: maxPool
+      value: 25
+      objectReference: {fileID: 0}
+    - target: {fileID: 2884457624692301363, guid: ac9d0c1ec42ccd44b86500d8ffd0dffe, type: 3}
+      propertyPath: minPool
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4357745534843902446, guid: ac9d0c1ec42ccd44b86500d8ffd0dffe, type: 3}
+      propertyPath: maxPool
+      value: 25
+      objectReference: {fileID: 0}
+    - target: {fileID: 4357745534843902446, guid: ac9d0c1ec42ccd44b86500d8ffd0dffe, type: 3}
+      propertyPath: minPool
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 4357745534843902446, guid: ac9d0c1ec42ccd44b86500d8ffd0dffe, type: 3}
       propertyPath: randomPlacement
       value: 1
@@ -1967,6 +1983,14 @@ PrefabInstance:
     - target: {fileID: 7398541664065397529, guid: ac9d0c1ec42ccd44b86500d8ffd0dffe, type: 3}
       propertyPath: onLevelGained.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 8681761382710732771, guid: ac9d0c1ec42ccd44b86500d8ffd0dffe, type: 3}
+      propertyPath: maxPool
+      value: 25
+      objectReference: {fileID: 0}
+    - target: {fileID: 8681761382710732771, guid: ac9d0c1ec42ccd44b86500d8ffd0dffe, type: 3}
+      propertyPath: minPool
+      value: 5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ac9d0c1ec42ccd44b86500d8ffd0dffe, type: 3}
@@ -2935,6 +2959,30 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 708919100555268017, guid: 4feb09e911e03894b9679794101f14e6, type: 3}
+      propertyPath: maxPool
+      value: 25
+      objectReference: {fileID: 0}
+    - target: {fileID: 708919100555268017, guid: 4feb09e911e03894b9679794101f14e6, type: 3}
+      propertyPath: minPool
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4841513292060873102, guid: 4feb09e911e03894b9679794101f14e6, type: 3}
+      propertyPath: maxPool
+      value: 25
+      objectReference: {fileID: 0}
+    - target: {fileID: 4841513292060873102, guid: 4feb09e911e03894b9679794101f14e6, type: 3}
+      propertyPath: minPool
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5516911587965214424, guid: 4feb09e911e03894b9679794101f14e6, type: 3}
+      propertyPath: maxPool
+      value: 25
+      objectReference: {fileID: 0}
+    - target: {fileID: 5516911587965214424, guid: 4feb09e911e03894b9679794101f14e6, type: 3}
+      propertyPath: minPool
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 5619248161752005381, guid: 4feb09e911e03894b9679794101f14e6, type: 3}
       propertyPath: m_Name
       value: Necromancer
@@ -3019,6 +3067,14 @@ PrefabInstance:
       propertyPath: target
       value: 
       objectReference: {fileID: 696232783}
+    - target: {fileID: 6783761702067692916, guid: 4feb09e911e03894b9679794101f14e6, type: 3}
+      propertyPath: maxPool
+      value: 25
+      objectReference: {fileID: 0}
+    - target: {fileID: 6783761702067692916, guid: 4feb09e911e03894b9679794101f14e6, type: 3}
+      propertyPath: minPool
+      value: 5
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4feb09e911e03894b9679794101f14e6, type: 3}
 --- !u!4 &1337945905 stripped

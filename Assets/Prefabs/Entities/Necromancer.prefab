@@ -233,7 +233,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 0}
-  minDistFromTarget: 4
+  minDistFromTarget: 10
   cooldownTime: 0.5
 --- !u!114 &6783761702067692916
 MonoBehaviour:

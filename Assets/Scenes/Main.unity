@@ -1893,12 +1893,32 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5829284874991758044, guid: ac9d0c1ec42ccd44b86500d8ffd0dffe, type: 3}
+      propertyPath: hasInvuln
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5829284874991758044, guid: ac9d0c1ec42ccd44b86500d8ffd0dffe, type: 3}
+      propertyPath: onHit.m_PersistentCalls.m_Calls.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5829284874991758044, guid: ac9d0c1ec42ccd44b86500d8ffd0dffe, type: 3}
+      propertyPath: onHit.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 696232795}
+    - target: {fileID: 5829284874991758044, guid: ac9d0c1ec42ccd44b86500d8ffd0dffe, type: 3}
       propertyPath: onDeath.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 789245228}
     - target: {fileID: 5829284874991758044, guid: ac9d0c1ec42ccd44b86500d8ffd0dffe, type: 3}
+      propertyPath: onHit.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: Flash
+      objectReference: {fileID: 0}
+    - target: {fileID: 5829284874991758044, guid: ac9d0c1ec42ccd44b86500d8ffd0dffe, type: 3}
       propertyPath: onDeath.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: OnPlayerDeath
+      objectReference: {fileID: 0}
+    - target: {fileID: 5829284874991758044, guid: ac9d0c1ec42ccd44b86500d8ffd0dffe, type: 3}
+      propertyPath: onHit.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: Kitsuma.Utils.Feel.FlashColor, Scripts
       objectReference: {fileID: 0}
     - target: {fileID: 5999703548391268397, guid: ac9d0c1ec42ccd44b86500d8ffd0dffe, type: 3}
       propertyPath: m_Name
@@ -2004,6 +2024,17 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 5999703548391268397, guid: ac9d0c1ec42ccd44b86500d8ffd0dffe, type: 3}
   m_PrefabInstance: {fileID: 696232782}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &696232795 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8967151482801541822, guid: ac9d0c1ec42ccd44b86500d8ffd0dffe, type: 3}
+  m_PrefabInstance: {fileID: 696232782}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 696232784}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6a44f0cece79f0a4bb2f07bffea85477, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &706574992
 GameObject:
   m_ObjectHideFlags: 0

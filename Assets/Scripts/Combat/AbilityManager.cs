@@ -16,7 +16,7 @@ namespace Kitsuma.Combat
         {
             _abilities = new List<Ability>();
             _abilities.AddRange(GetComponents<Ability>());
-            _inactiveAbilities = _abilities;
+            _inactiveAbilities = new List<Ability>(_abilities);
             _inactiveAbilities.Remove(defaultAbility);
             _activeAbilities = hasAllAbilities ? _abilities : new List<Ability> { defaultAbility };
         }
@@ -39,14 +39,15 @@ namespace Kitsuma.Combat
 
         public void ResetAllAbilities()
         {
-            _activeAbilities = hasAllAbilities ? _abilities : new List<Ability> { defaultAbility };
-            _inactiveAbilities = _abilities;
-            
             foreach (Ability ability in _abilities)
             {
                 ability.ResetLevels();
             }
             
+            _inactiveAbilities = new List<Ability>(_abilities);
+            _inactiveAbilities.Remove(defaultAbility);
+            _activeAbilities = hasAllAbilities ? _abilities : new List<Ability> { defaultAbility };
+
             ResetAllCooldowns();
         }
         

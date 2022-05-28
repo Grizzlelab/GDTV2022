@@ -1,4 +1,3 @@
-using System;
 using System.Collections;
 using UnityEngine;
 
@@ -12,6 +11,7 @@ namespace Kitsuma.Combat
         
         [SerializeField] protected float damage = 2f;
         [SerializeField] protected float speed = 10f;
+        [SerializeField] protected float maxSpeed = 15f;
         [SerializeField] protected float cooldownTime = 0.25f;
         [SerializeField] protected int level = 1;
 
@@ -50,7 +50,7 @@ namespace Kitsuma.Combat
         public virtual void Upgrade()
         {
             damage *= DamageUpgradeIncrement;
-            speed *= SpeedUpgradeIncrement;
+            speed = Mathf.Clamp(speed * SpeedUpgradeIncrement, 0f, maxSpeed);
             cooldownTime *= CooldownUpgradeDecrement;
             _wait = new WaitForSeconds(cooldownTime);
             _onCooldown = false;

@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using UnityEngine;
 
@@ -24,6 +25,11 @@ namespace Kitsuma.Combat
         {
             T = transform;
             Owner = gameObject.tag;
+        }
+
+        private void OnDisable()
+        {
+            _onCooldown = false;
         }
 
         public void Use(Vector2 target)

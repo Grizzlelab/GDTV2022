@@ -2222,6 +2222,8 @@ MonoBehaviour:
   - {fileID: 5252168234662768003, guid: 4691abef55e529c48910024be6810ac6, type: 3}
   - {fileID: 5252168234662768003, guid: d3dd229a61d73b24b8767c36c212317d, type: 3}
   - {fileID: 5252168234662768003, guid: 10399ccb22e94e144ad64163e5888e56, type: 3}
+  - {fileID: 6706718445740581121, guid: 600da450e09d81a43b0f6bfd9187733c, type: 3}
+  - {fileID: 6706718445740581121, guid: b64c0c6aa04d0324a952536d2fe9311f, type: 3}
   minCapacity: 10
   maxCapacity: 20
   radiusAroundPlayer: 10

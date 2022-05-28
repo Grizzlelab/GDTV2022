@@ -137,7 +137,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9145999437040859654, guid: a4deba39ec188f14c934a669c12e850c, type: 3}
       propertyPath: m_SortingLayer
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 9145999437040859654, guid: a4deba39ec188f14c934a669c12e850c, type: 3}
       propertyPath: m_SortingLayerID
@@ -194,3 +194,31 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c522e87628254f68a40a2a108f61f4b6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &4153913610036405554
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7045926218441451347}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e924e0c941f44446b48349ef1dc05404, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  distance: 20
+  onTooFar:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 6721484289158824283}
+        m_TargetAssemblyTypeName: Kitsuma.Utils.Release, Scripts
+        m_MethodName: OnRelease
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2

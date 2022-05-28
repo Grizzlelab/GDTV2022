@@ -20,11 +20,17 @@ namespace Kitsuma.Combat
 
         private bool _onCooldown;
         private WaitForSeconds _wait;
+        private float _originalDamage;
+        private float _originalSpeed;
+        private float _originalCooldown;
 
         private void Awake()
         {
             T = transform;
             Owner = gameObject.tag;
+            _originalDamage = damage;
+            _originalSpeed = speed;
+            _originalCooldown = cooldownTime;
         }
 
         private void OnDisable()
@@ -51,30 +57,24 @@ namespace Kitsuma.Combat
         {
             damage *= DamageUpgradeIncrement;
             speed = Mathf.Clamp(speed * SpeedUpgradeIncrement, 0f, maxSpeed);
-            cooldownTime *= CooldownUpgradeDecrement;
+            cooldownTime = Mathf.Clamp(
+                cooldownTime * CooldownUpgradeDecrement, 
+                0.05f, 
+                cooldownTime);
             _wait = new WaitForSeconds(cooldownTime);
             _onCooldown = false;
-            level++;
+            level += 1;
         }
 
-        protected virtual void Downgrade()
-        {
-            damage *= -DamageUpgradeIncrement;
-            speed *= -SpeedUpgradeIncrement;
-            cooldownTime *= -CooldownUpgradeDecrement;
-            _wait = new WaitForSeconds(cooldownTime);
-            _onCooldown = false;
-            level--;
-        }
-
-        public void ResetLevels()
+        public virtual void ResetLevels()
         {
             if (level <= 1) return;
-            
-            for (int i = level; i >= 0; i--)
-            {
-                Downgrade();
-            }
+            damage = _originalDamage;
+            speed = _originalSpeed;
+            cooldownTime = _originalCooldown;
+            _wait = new WaitForSeconds(cooldownTime);
+            level = 1;
+            ResetCooldown();
         }
 
         public void ResetCooldown()

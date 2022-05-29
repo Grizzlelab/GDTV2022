@@ -216,6 +216,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bar: {fileID: 1528678539802621247}
+  background: {fileID: 1528678538845735554}
+  border: {fileID: 1528678538444662678}
+  hideOnFull: 1
 --- !u!1 &1528678539802621246
 GameObject:
   m_ObjectHideFlags: 0

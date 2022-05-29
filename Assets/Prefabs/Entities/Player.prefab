@@ -153,6 +153,10 @@ PrefabInstance:
       propertyPath: color.r
       value: 0.8584906
       objectReference: {fileID: 0}
+    - target: {fileID: 6105134418050534727, guid: a4deba39ec188f14c934a669c12e850c, type: 3}
+      propertyPath: hideOnFull
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7317662489077434661, guid: a4deba39ec188f14c934a669c12e850c, type: 3}
       propertyPath: onHit.m_PersistentCalls.m_Calls.Array.size
       value: 3

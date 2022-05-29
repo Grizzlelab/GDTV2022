@@ -166,34 +166,6 @@ MonoBehaviour:
   tagToHurt: Player
   radius: 1
   checkTime: 0.5
---- !u!114 &5989170698841218640
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7045926218441451347}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 905723fc897461e4da10e8fd4cddcc88, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  expOrb: {fileID: 9193996714572281680, guid: c26d7c7606e04d7479c626344816a4df, type: 3}
-  amountToDrop: 1
-  randomizedPosition: 1
-  randomRadius: 1
---- !u!114 &6721484289158824283
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7045926218441451347}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c522e87628254f68a40a2a108f61f4b6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &4153913610036405554
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -222,3 +194,31 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &5989170698841218640
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7045926218441451347}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 905723fc897461e4da10e8fd4cddcc88, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  expOrb: {fileID: 9193996714572281680, guid: c26d7c7606e04d7479c626344816a4df, type: 3}
+  amountToDrop: 1
+  randomizedPosition: 1
+  randomRadius: 1
+--- !u!114 &6721484289158824283
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7045926218441451347}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c522e87628254f68a40a2a108f61f4b6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

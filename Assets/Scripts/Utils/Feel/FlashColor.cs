@@ -1,4 +1,3 @@
-using System;
 using System.Collections;
 using UnityEngine;
 
@@ -35,6 +34,7 @@ namespace Kitsuma.Utils.Feel
 
         public void Reset()
         {
+            _flashing = false;
             RevertMaterialColor();
         }
 

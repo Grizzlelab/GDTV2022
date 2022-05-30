@@ -6,9 +6,9 @@ namespace Kitsuma.Movement
     public class FollowPlayer : MonoBehaviour
     {
         [SerializeField] private float speed = 7f;
+        private Transform _player;
 
         private Transform _t;
-        private Transform _player;
 
         private void Awake()
         {

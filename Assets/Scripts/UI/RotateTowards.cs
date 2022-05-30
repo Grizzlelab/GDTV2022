@@ -1,4 +1,3 @@
-using System;
 using UnityEngine;
 
 namespace Kitsuma.UI
@@ -15,7 +14,7 @@ namespace Kitsuma.UI
             if (angle < 0) angle += 360;
             T.localEulerAngles = new Vector3(0f, 0f, angle);
         }
-        
+
         private static Vector3 GetDirection(Vector3 a, Vector3 b)
         {
             return (a - b).normalized;

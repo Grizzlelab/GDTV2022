@@ -6,9 +6,12 @@ namespace Kitsuma.Entities.Player
     public class LevelSystem : MonoBehaviour
     {
         [SerializeField] private int maxLevel = 99;
+
         [SerializeField] private int currentLevel = 1;
+
         // Current Experience, experience required for the next level
         [SerializeField] private UnityEvent<int, int> onExpGained;
+
         // Current Experience, experience required for the next level
         [SerializeField] private UnityEvent<int, int> onLevelGained;
 

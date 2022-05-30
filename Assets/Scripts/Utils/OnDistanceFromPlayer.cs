@@ -1,4 +1,3 @@
-using System;
 using Kitsuma.Managers;
 using UnityEngine;
 using UnityEngine.Events;
@@ -9,10 +8,10 @@ namespace Kitsuma.Utils
     {
         [SerializeField] private float distance = 20f;
         [SerializeField] private UnityEvent onTooFar;
+        private bool _hasSentEvent;
+        private Transform _player;
 
         private Transform _t;
-        private Transform _player;
-        private bool _hasSentEvent;
 
         private void Awake()
         {
@@ -24,16 +23,16 @@ namespace Kitsuma.Utils
             _player = GameManager.Instance.GetPlayer().transform;
         }
 
-        private void OnEnable()
-        {
-            _hasSentEvent = false;
-        }
-
         private void Update()
         {
             if (_hasSentEvent || !GetTooFar()) return;
             onTooFar?.Invoke();
             _hasSentEvent = true;
+        }
+
+        private void OnEnable()
+        {
+            _hasSentEvent = false;
         }
 
         private bool GetTooFar()

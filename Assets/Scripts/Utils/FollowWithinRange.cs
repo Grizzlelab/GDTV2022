@@ -1,4 +1,3 @@
-using System;
 using Kitsuma.Movement;
 using UnityEngine;
 

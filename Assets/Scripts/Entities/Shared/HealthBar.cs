@@ -7,7 +7,7 @@ namespace Kitsuma.Entities.Shared
         [SerializeField] private Transform bar;
         [SerializeField] private Transform background;
         [SerializeField] private Transform border;
-        
+
         [SerializeField] private bool hideOnFull;
 
         private void Start()

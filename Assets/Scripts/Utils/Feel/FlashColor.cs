@@ -6,14 +6,20 @@ namespace Kitsuma.Utils.Feel
     public class FlashColor : MonoBehaviour
     {
         private static readonly int HighlightColor = Shader.PropertyToID("_HighlightColor");
-        
+
         [SerializeField] private SpriteRenderer sprite;
         [SerializeField] private Color color = Color.white;
         [SerializeField] private float flashTime = 0.1f;
+        private bool _flashing;
 
         private Color _originalColor;
         private WaitForSeconds _wait;
-        private bool _flashing;
+
+        public void Reset()
+        {
+            _flashing = false;
+            RevertMaterialColor();
+        }
 
         private void Start()
         {
@@ -30,12 +36,6 @@ namespace Kitsuma.Utils.Feel
             if (_flashing) return;
             SetMaterialColor();
             StartCoroutine(WaitCoroutine());
-        }
-
-        public void Reset()
-        {
-            _flashing = false;
-            RevertMaterialColor();
         }
 
         private IEnumerator WaitCoroutine()

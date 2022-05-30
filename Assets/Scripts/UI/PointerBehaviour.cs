@@ -5,9 +5,9 @@ namespace Kitsuma.UI
     public class PointerBehaviour : MonoBehaviour
     {
         [SerializeField] protected Transform target;
+        protected Camera Cam;
 
         protected RectTransform T;
-        protected Camera Cam;
 
         private void Awake()
         {

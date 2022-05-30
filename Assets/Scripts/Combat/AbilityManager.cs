@@ -7,10 +7,10 @@ namespace Kitsuma.Combat
     {
         [SerializeField] private Ability defaultAbility;
         [SerializeField] private bool hasAllAbilities;
-        
+
         private List<Ability> _abilities;
-        private List<Ability> _inactiveAbilities;
         private List<Ability> _activeAbilities;
+        private List<Ability> _inactiveAbilities;
 
         private void Awake()
         {
@@ -23,40 +23,28 @@ namespace Kitsuma.Combat
 
         public void UseAbilities(Vector2 target)
         {
-            foreach (Ability ability in _activeAbilities)
-            {
-                ability.Use(target);
-            }
+            foreach (Ability ability in _activeAbilities) ability.Use(target);
         }
 
         public void UpgradeAllAbilities()
         {
-            foreach (Ability ability in _activeAbilities)
-            {
-                ability.Upgrade();
-            }
+            foreach (Ability ability in _activeAbilities) ability.Upgrade();
         }
 
         public void ResetAllAbilities()
         {
-            foreach (Ability ability in _abilities)
-            {
-                ability.ResetLevels();
-            }
-            
+            foreach (Ability ability in _abilities) ability.ResetLevels();
+
             _inactiveAbilities = new List<Ability>(_abilities);
             _inactiveAbilities.Remove(defaultAbility);
             _activeAbilities = hasAllAbilities ? _abilities : new List<Ability> { defaultAbility };
 
             ResetAllCooldowns();
         }
-        
+
         public void ResetAllCooldowns()
         {
-            foreach (Ability ability in _abilities)
-            {
-                ability.ResetCooldown();
-            }
+            foreach (Ability ability in _abilities) ability.ResetCooldown();
         }
 
         public void UnlockRandomAbility()
@@ -66,8 +54,15 @@ namespace Kitsuma.Combat
             _inactiveAbilities.Remove(a);
             _activeAbilities.Add(a);
         }
-        
-        public bool HasNewAbilities() => _inactiveAbilities.Count > 0;
-        public List<Ability> GetAbilities() => _abilities;
+
+        public bool HasNewAbilities()
+        {
+            return _inactiveAbilities.Count > 0;
+        }
+
+        public List<Ability> GetAbilities()
+        {
+            return _abilities;
+        }
     }
 }

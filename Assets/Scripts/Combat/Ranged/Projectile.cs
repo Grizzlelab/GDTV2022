@@ -10,18 +10,18 @@ namespace Kitsuma.Combat.Ranged
         // Vector3
         [SerializeField] protected UnityEvent<Vector3> onProjectileFired;
         [SerializeField] protected UnityEvent onTargetReached;
+        protected float Damage;
+        protected Vector3 Direction;
+        protected bool Initialized;
+        private bool IsReleased;
+        protected Action<Projectile> OnRelease;
+        protected Transform Owner;
+        protected string OwnerTag;
+        protected bool Pierces;
+        protected float Speed;
 
         protected Transform T;
-        protected Transform Owner;
         protected Vector3 Target;
-        protected string OwnerTag;
-        protected float Damage;
-        protected float Speed;
-        protected bool Pierces;
-        protected bool Initialized;
-        protected Vector3 Direction;
-        protected Action<Projectile> OnRelease;
-        private bool IsReleased;
 
         private void Update()
         {
@@ -34,7 +34,8 @@ namespace Kitsuma.Combat.Ranged
             IsReleased = false;
         }
 
-        public void Initialize(string ownerTag, Transform owner, Vector3 target, float damage, float speed, bool pierces)
+        public void Initialize(string ownerTag, Transform owner, Vector3 target, float damage, float speed,
+            bool pierces)
         {
             T = transform;
             Owner = owner;
@@ -52,7 +53,7 @@ namespace Kitsuma.Combat.Ranged
         {
             T.position += Direction * (Speed * Time.deltaTime);
         }
-        
+
         protected Vector3 GetDirection(Vector3 target)
         {
             return (target - T.position).normalized;

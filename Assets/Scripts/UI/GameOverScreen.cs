@@ -8,7 +8,14 @@ namespace Kitsuma.UI
         [SerializeField] private TMP_Text header;
         [SerializeField] private TMP_Text subheader;
 
-        public void SetHeader(string text) => header.text = text;
-        public void SetSubHeader(string text) => subheader.text = text;
+        public void SetHeader(string text)
+        {
+            header.text = text;
+        }
+
+        public void SetSubHeader(string text)
+        {
+            subheader.text = text;
+        }
     }
 }

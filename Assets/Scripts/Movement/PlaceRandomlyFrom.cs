@@ -1,5 +1,4 @@
 using UnityEngine;
-using Random = UnityEngine.Random;
 
 namespace Kitsuma.Movement
 {
@@ -14,13 +13,13 @@ namespace Kitsuma.Movement
         {
             _t = transform;
         }
-        
+
         public void PlaceRandomly(Vector3 t)
         {
             Vector3 p = new Vector3(
-                            Random.value - 0.5f, 
-                            Random.value - 0.5f, 
-                            0f).normalized * Random.Range(minDist, maxDist);
+                Random.value - 0.5f,
+                Random.value - 0.5f,
+                0f).normalized * Random.Range(minDist, maxDist);
             _t.position = t + p;
         }
     }

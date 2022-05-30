@@ -12,6 +12,9 @@ namespace Kitsuma.Utils
             _onRelease = onRelease;
         }
 
-        public void OnRelease() => _onRelease(gameObject);
+        public void OnRelease()
+        {
+            _onRelease(gameObject);
+        }
     }
 }

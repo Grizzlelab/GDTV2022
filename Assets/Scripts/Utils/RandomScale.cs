@@ -1,6 +1,4 @@
-using System;
 using UnityEngine;
-using Random = UnityEngine.Random;
 
 namespace Kitsuma.Utils
 {
@@ -25,7 +23,7 @@ namespace Kitsuma.Utils
         {
             SetRandomScale();
         }
-        
+
         private void SetRandomScale()
         {
             _t.localScale = new Vector3(

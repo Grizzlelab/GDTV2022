@@ -4,12 +4,12 @@ namespace Kitsuma.Movement
 {
     public class PlayerMovement : MovementBehaviour
     {
-        [SerializeField, Min(0f)]
-        private float moveSpeed = 10f;
-        
-        private Rigidbody2D _rb;
+        [SerializeField] [Min(0f)] private float moveSpeed = 10f;
+
         private PlayerInputActions _input;
         private Vector2 _movement;
+
+        private Rigidbody2D _rb;
 
         private void Awake()
         {

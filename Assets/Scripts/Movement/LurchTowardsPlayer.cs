@@ -1,4 +1,3 @@
-using System;
 using System.Collections;
 using Kitsuma.Managers;
 using UnityEngine;
@@ -13,16 +12,18 @@ namespace Kitsuma.Movement
         [SerializeField] private string lurchAnim = "Slime_Lurch";
         [SerializeField] private float speed = 7f;
         [SerializeField] private float restTime = 0.25f;
+
         [SerializeField] private float lurchTime = 0.5f;
+
         // Direction
         [SerializeField] private UnityEvent<Vector3> onMovement;
-
-        private Transform _t;
-        private Transform _player;
-        private WaitForSeconds _rest;
-        private WaitForSeconds _lurch;
         private bool _canMove;
         private bool _hasBeenDisabled;
+        private WaitForSeconds _lurch;
+        private Transform _player;
+        private WaitForSeconds _rest;
+
+        private Transform _t;
 
         private void Awake()
         {
@@ -35,11 +36,6 @@ namespace Kitsuma.Movement
             StartCoroutine(RestCoroutine());
         }
 
-        private void OnDisable()
-        {
-            _hasBeenDisabled = true;
-        }
-
         private void Update()
         {
             if (_hasBeenDisabled)
@@ -48,11 +44,16 @@ namespace Kitsuma.Movement
                 _canMove = false;
                 StartCoroutine(RestCoroutine());
             }
-            
+
             if (!_canMove || IsAtPlayer()) return;
             Vector3 dir = GetDirectionToPlayer();
             _t.position += dir * (speed * Time.deltaTime);
             onMovement?.Invoke(dir);
+        }
+
+        private void OnDisable()
+        {
+            _hasBeenDisabled = true;
         }
 
         private Vector3 GetDirectionToPlayer()

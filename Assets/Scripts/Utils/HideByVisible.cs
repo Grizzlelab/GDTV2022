@@ -22,8 +22,8 @@ namespace Kitsuma.Utils
         private bool IsTargetOffScreen()
         {
             Vector3 pos = _cam.WorldToScreenPoint(target.position);
-            return pos.x <= 0 || 
-                   pos.x >= Screen.width || 
+            return pos.x <= 0 ||
+                   pos.x >= Screen.width ||
                    pos.y <= 0 ||
                    pos.y >= Screen.height;
         }

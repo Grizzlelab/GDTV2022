@@ -8,7 +8,7 @@ namespace Kitsuma.UI
         [SerializeField] private GameObject upgradeAbilitiesButton;
 
         public void Show(bool hasNewAbilities)
-        { 
+        {
             newAbilitiesButton.SetActive(hasNewAbilities);
             upgradeAbilitiesButton.SetActive(!hasNewAbilities);
         }

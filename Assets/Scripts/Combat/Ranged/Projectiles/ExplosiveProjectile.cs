@@ -1,4 +1,3 @@
-using System;
 using System.Collections;
 using Kitsuma.Entities.Shared;
 using UnityEngine;
@@ -14,14 +13,19 @@ namespace Kitsuma.Combat.Ranged.Projectiles
         [SerializeField] private float detonateAfter = 0.25f;
         [SerializeField] private float pulseTime = 0.1f;
         [SerializeField] private float radius = 2f;
-        
-        private bool _shouldMove = true;
         private WaitForSeconds _pulseWait;
+
+        private bool _shouldMove = true;
+
+        private void OnDisable()
+        {
+            _shouldMove = true;
+        }
 
         protected override void Move()
         {
             if (!_shouldMove) return;
-            
+
             if (IsAtTarget())
             {
                 _shouldMove = false;
@@ -30,13 +34,8 @@ namespace Kitsuma.Combat.Ranged.Projectiles
                 StartCoroutine(DetonateCoroutine());
                 return;
             }
-            
-            MoveToTarget();
-        }
 
-        private void OnDisable()
-        {
-            _shouldMove = true;
+            MoveToTarget();
         }
 
         private IEnumerator PulseCoroutine()
@@ -59,7 +58,7 @@ namespace Kitsuma.Combat.Ranged.Projectiles
         }
 
         private void SpawnExplosion()
-        { 
+        {
             Instantiate(explosionPrefab, T.position, Quaternion.identity);
         }
 

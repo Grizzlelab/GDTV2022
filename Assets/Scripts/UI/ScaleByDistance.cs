@@ -23,8 +23,8 @@ namespace Kitsuma.UI
         {
             if (GetScale() == _t.localScale) return;
             _t.localScale = Vector3.Slerp(
-                _t.localScale, 
-                GetScale(), 
+                _t.localScale,
+                GetScale(),
                 scaleSpeed * Time.deltaTime);
         }
 

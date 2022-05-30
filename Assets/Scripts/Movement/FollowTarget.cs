@@ -5,11 +5,11 @@ namespace Kitsuma.Movement
     public class FollowTarget : MonoBehaviour
     {
         [SerializeField] private float moveSpeed = 20f;
+        private bool _isFollowing;
 
         private Transform _t;
         private Transform _target;
-        private bool _isFollowing;
-        
+
         private void Awake()
         {
             _t = transform;

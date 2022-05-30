@@ -1,4 +1,3 @@
-using System;
 using Kitsuma.Entities.Shared;
 using Kitsuma.Managers;
 using UnityEngine;
@@ -14,12 +13,23 @@ namespace Kitsuma.Combat.Ranged.Projectiles
             _isReturning = false;
         }
 
+        private void OnTriggerEnter2D(Collider2D col)
+        {
+            if (GameManager.Instance.GetIsPaused()) return;
+            if (_isReturning)
+                if (col.CompareTag(OwnerTag))
+                {
+                    Release();
+                    return;
+                }
+
+            if (col.CompareTag(OwnerTag)) return;
+            DamageCollider(col);
+        }
+
         protected override void Move()
         {
-            if (IsAtTarget() && !_isReturning)
-            {
-                _isReturning = true;
-            }
+            if (IsAtTarget() && !_isReturning) _isReturning = true;
 
             if (_isReturning)
             {
@@ -33,22 +43,6 @@ namespace Kitsuma.Combat.Ranged.Projectiles
         private void SetReturnDirection()
         {
             Direction = GetDirection(Owner.position);
-        }
-
-        private void OnTriggerEnter2D(Collider2D col)
-        {
-            if (GameManager.Instance.GetIsPaused()) return;
-            if (_isReturning)
-            {
-                if (col.CompareTag(OwnerTag))
-                {
-                    Release();
-                    return;
-                }
-            }
-
-            if (col.CompareTag(OwnerTag)) return;
-            DamageCollider(col);
         }
 
         private void DamageCollider(Collider2D col)

@@ -6,21 +6,19 @@ namespace Kitsuma.Utils.Feel
     public class TimeController : MonoBehaviour
     {
         private static TimeController _instance;
+        private bool _timeChanged;
+
+        private WaitForSeconds _wait;
+
         public static TimeController Instance
         {
             get
             {
-                if (_instance == null)
-                {
-                    _instance = FindObjectOfType<TimeController>();
-                }
+                if (_instance == null) _instance = FindObjectOfType<TimeController>();
 
                 return _instance;
             }
         }
-
-        private WaitForSeconds _wait;
-        private bool _timeChanged;
 
         public void ChangeTime(float timeScale, float time)
         {

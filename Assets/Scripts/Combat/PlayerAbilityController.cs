@@ -21,12 +21,19 @@ namespace Kitsuma.Combat
         private void Update()
         {
             if (!_input.Player.Attack.triggered || _paused) return;
-            Vector2 mousePos = Mouse.current.position.ReadValue(); 
+            Vector2 mousePos = Mouse.current.position.ReadValue();
             mousePos = _camera.ScreenToWorldPoint(mousePos);
             _abilities.UseAbilities(mousePos);
         }
 
-        public void Pause() => _paused = true;
-        public void Unpause() => _paused = false;
+        public void Pause()
+        {
+            _paused = true;
+        }
+
+        public void Unpause()
+        {
+            _paused = false;
+        }
     }
 }

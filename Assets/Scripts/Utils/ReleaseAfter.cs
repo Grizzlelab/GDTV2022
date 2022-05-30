@@ -7,10 +7,10 @@ namespace Kitsuma.Utils
     public class ReleaseAfter : MonoBehaviour
     {
         [SerializeField] private float time;
+        private Projectile _p;
 
         private WaitForSeconds _wait;
-        private Projectile _p;
-        
+
         private void Awake()
         {
             _wait = new WaitForSeconds(time);

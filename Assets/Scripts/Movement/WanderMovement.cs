@@ -1,6 +1,5 @@
 using System.Collections;
 using UnityEngine;
-using Random = UnityEngine.Random;
 
 namespace Kitsuma.Movement
 {
@@ -13,29 +12,29 @@ namespace Kitsuma.Movement
         [SerializeField] private float distanceCheck = 1f;
 
         private bool _canWander = true;
-        private Transform _trans;
         private Vector3 _startPosition;
         private Vector3 _target;
+        private Transform _trans;
         private WaitForSeconds _wait;
 
         private void Awake()
         {
             _trans = transform;
             _wait = new WaitForSeconds(Random.Range(
-                wanderWaitTime - waitRand, 
+                wanderWaitTime - waitRand,
                 wanderWaitTime + waitRand));
         }
 
         private void Update()
         {
             if (!_canWander) return;
-            
+
             if (_startPosition == Vector3.zero)
             {
                 _startPosition = _trans.position;
                 _target = GetRandomWanderTarget();
             }
-            
+
             Vector3 vec = GetMovementDelta();
             SetAnimationByMovement(vec);
             _trans.position += vec;
@@ -60,15 +59,15 @@ namespace Kitsuma.Movement
         private Vector3 GetRandomWanderTarget()
         {
             return new Vector3(
-                GetRandX(), 
-                GetRandY(), 
+                GetRandX(),
+                GetRandY(),
                 _startPosition.z);
         }
 
         private float GetRandX()
         {
             return Random.Range(
-                _startPosition.x - wanderDistance.x, 
+                _startPosition.x - wanderDistance.x,
                 _startPosition.x + wanderDistance.x);
         }
 

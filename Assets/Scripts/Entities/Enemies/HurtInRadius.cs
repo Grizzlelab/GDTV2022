@@ -1,4 +1,3 @@
-using System;
 using System.Collections;
 using Kitsuma.Entities.Shared;
 using UnityEngine;
@@ -11,10 +10,10 @@ namespace Kitsuma.Entities.Enemies
         [SerializeField] private string tagToHurt;
         [SerializeField] private float radius;
         [SerializeField] private float checkTime = 0.5f;
+        private bool _isOnCooldown;
 
         private Transform _t;
         private WaitForSeconds _wait;
-        private bool _isOnCooldown;
 
         private void Awake()
         {
@@ -22,15 +21,15 @@ namespace Kitsuma.Entities.Enemies
             _wait = new WaitForSeconds(checkTime);
         }
 
-        private void OnEnable()
-        {
-            _isOnCooldown = false;
-        }
-
         private void Update()
         {
             if (_isOnCooldown) return;
             StartCoroutine(HurtCoroutine());
+        }
+
+        private void OnEnable()
+        {
+            _isOnCooldown = false;
         }
 
         private IEnumerator HurtCoroutine()

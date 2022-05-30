@@ -17,8 +17,8 @@ namespace Kitsuma.Utils
         private void Update()
         {
             _t.localScale = Vector3.Slerp(
-                _t.localScale, 
-                targetScale, 
+                _t.localScale,
+                targetScale,
                 Time.deltaTime * scaleSpeed);
         }
     }

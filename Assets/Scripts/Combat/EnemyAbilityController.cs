@@ -10,16 +10,21 @@ namespace Kitsuma.Combat
         [SerializeField] private float cooldownTime = 0.5f;
 
         private AbilityManager _abilities;
-        private Transform _t;
-        private WaitForSeconds _wait;
         private bool _isOnCooldown;
         private bool _paused;
+        private Transform _t;
+        private WaitForSeconds _wait;
 
         private void Awake()
         {
             _abilities = GetComponent<AbilityManager>();
             _t = transform;
             _wait = new WaitForSeconds(cooldownTime);
+        }
+
+        public void Reset()
+        {
+            _isOnCooldown = false;
         }
 
         private void Update()
@@ -42,12 +47,14 @@ namespace Kitsuma.Combat
             return dist <= minDistFromTarget;
         }
 
-        public void Reset()
+        public void Pause()
         {
-            _isOnCooldown = false;
+            _paused = true;
         }
 
-        public void Pause() => _paused = true;
-        public void Unpause() => _paused = false;
+        public void Unpause()
+        {
+            _paused = false;
+        }
     }
 }

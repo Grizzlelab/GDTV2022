@@ -2292,7 +2292,6 @@ MonoBehaviour:
   - {fileID: 7597348322159874766, guid: 465e0006c3b88474e97404c6fd1c2e42, type: 3}
   minCapacity: 10
   maxCapacity: 50
-  radiusAroundPlayer: 10
   spawnWait: 1
   batchSpawn: 10
 --- !u!114 &789245231
@@ -2314,11 +2313,10 @@ MonoBehaviour:
   - {fileID: 5252168234662768003, guid: 10399ccb22e94e144ad64163e5888e56, type: 3}
   - {fileID: 6706718445740581121, guid: 600da450e09d81a43b0f6bfd9187733c, type: 3}
   - {fileID: 6706718445740581121, guid: b64c0c6aa04d0324a952536d2fe9311f, type: 3}
-  minCapacity: 10
-  maxCapacity: 20
-  radiusAroundPlayer: 10
-  spawnWait: 1
-  batchSpawn: 2
+  minCapacity: 30
+  maxCapacity: 40
+  spawnWait: 0.5
+  batchSpawn: 10
 --- !u!1 &957231348
 GameObject:
   m_ObjectHideFlags: 0

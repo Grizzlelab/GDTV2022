@@ -1,9 +1,5 @@
-using System.Collections;
 using Kitsuma.Entities.Shared;
-using Kitsuma.Utils;
 using UnityEngine;
-using UnityEngine.Pool;
-using Random = UnityEngine.Random;
 
 namespace Kitsuma.Managers
 {

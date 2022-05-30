@@ -1,5 +1,5 @@
-using System;
 using System.Collections;
+using Kitsuma.Movement;
 using Kitsuma.Utils;
 using UnityEngine;
 using UnityEngine.Pool;
@@ -12,7 +12,6 @@ namespace Kitsuma.Managers
         [SerializeField] protected GameObject[] prefabs;
         [SerializeField] protected int minCapacity = 10;
         [SerializeField] protected int maxCapacity = 20;
-        [SerializeField] protected float radiusAroundPlayer = 10f;
         [SerializeField] protected float spawnWait = 1f;
         [SerializeField] protected int batchSpawn = 10;
 
@@ -40,10 +39,7 @@ namespace Kitsuma.Managers
         
         protected virtual void OnCreate(GameObject obj)
         {
-            obj.transform.position = Player.position + new Vector3(
-                Random.Range(-radiusAroundPlayer, radiusAroundPlayer) * radiusAroundPlayer / 2,
-                Random.Range(-radiusAroundPlayer, radiusAroundPlayer) * radiusAroundPlayer / 2,
-                0f);
+            obj.GetComponent<PlaceRandomlyFrom>().PlaceRandomly(Player.position);
             obj.GetComponent<Release>().SetOnRelease(OnRelease);
             obj.SetActive(true);
         }

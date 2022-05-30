@@ -19,19 +19,19 @@ namespace Kitsuma.Combat.Ranged
         [SerializeField] private float spawnWait = 0.05f;
         [SerializeField] private Projectile projectilePrefab;
         [SerializeField] private bool randomPlacement;
-
-        private WaitForSeconds _wait;
-        private ObjectPool<Projectile> _pool;
         private int _originalProjectileCount;
         private float _originalSpawnWait;
+        private ObjectPool<Projectile> _pool;
+
+        private WaitForSeconds _wait;
 
         private void Start()
         {
             _pool = new ObjectPool<Projectile>(
-                () => Instantiate(projectilePrefab, transform.position, Quaternion.identity), 
+                () => Instantiate(projectilePrefab, transform.position, Quaternion.identity),
                 p => p.gameObject.SetActive(true),
-                p => p.gameObject.SetActive(false), 
-                p => Destroy(p.gameObject), 
+                p => p.gameObject.SetActive(false),
+                p => Destroy(p.gameObject),
                 true, minPool, maxPool);
             _originalProjectileCount = projectileCount;
             _originalSpawnWait = spawnWait;
@@ -46,7 +46,7 @@ namespace Kitsuma.Combat.Ranged
         private IEnumerator SpawnProjectilesCoroutine(Vector2 target)
         {
             _wait ??= new WaitForSeconds(spawnWait);
-            
+
             for (var i = 0; i < projectileCount; i++)
             {
                 CreateProjectile(target);
@@ -59,14 +59,14 @@ namespace Kitsuma.Combat.Ranged
             Projectile p = _pool.Get();
 
             p.transform.position = transform.position;
-            
+
             if (randomPlacement)
             {
                 Transform t = p.transform;
                 Vector2 rand = Random.insideUnitCircle;
                 t.position += new Vector3(rand.x, rand.y, 0f);
             }
-            
+
             p.SetOnRelease(OnRelease);
             p.Initialize(Owner, T, target, damage, speed, pierces);
         }
@@ -74,12 +74,12 @@ namespace Kitsuma.Combat.Ranged
         public override void Upgrade()
         {
             projectileCount = Math.Clamp(
-                projectileCount + ProjectileCountUpgradeIncrement, 
-                0, 
+                projectileCount + ProjectileCountUpgradeIncrement,
+                0,
                 maxProjectiles);
             spawnWait = Mathf.Clamp(
-                spawnWait * SpawnWaitUpgradeDecrement, 
-                0f, 
+                spawnWait * SpawnWaitUpgradeDecrement,
+                0f,
                 spawnWait);
             _wait = new WaitForSeconds(spawnWait);
             base.Upgrade();

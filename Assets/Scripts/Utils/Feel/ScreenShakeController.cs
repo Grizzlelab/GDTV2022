@@ -7,22 +7,20 @@ namespace Kitsuma.Utils.Feel
     public class ScreenShakeController : MonoBehaviour
     {
         private static ScreenShakeController _instance;
+
+        private CinemachineBasicMultiChannelPerlin _perlin;
+        private bool _shaking;
+        private WaitForSeconds _wait;
+
         public static ScreenShakeController Instance
         {
             get
             {
-                if (_instance == null)
-                {
-                    _instance = FindObjectOfType<ScreenShakeController>();
-                }
-                
+                if (_instance == null) _instance = FindObjectOfType<ScreenShakeController>();
+
                 return _instance;
             }
         }
-
-        private CinemachineBasicMultiChannelPerlin _perlin;
-        private WaitForSeconds _wait;
-        private bool _shaking;
 
         private void Start()
         {

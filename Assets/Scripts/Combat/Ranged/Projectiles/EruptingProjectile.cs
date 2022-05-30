@@ -1,4 +1,3 @@
-using System;
 using System.Collections;
 using Kitsuma.Entities.Shared;
 using UnityEngine;
@@ -12,13 +11,13 @@ namespace Kitsuma.Combat.Ranged.Projectiles
         [SerializeField] private float hiddenWaitTime = 0.5f;
         [SerializeField] private float visibleWaitTime = 0.5f;
         [SerializeField] private float damagePulseTime = 0.25f;
-        
+
         private Animator _anim;
         private WaitForSeconds _hiddenWait;
-        private WaitForSeconds _visibleWait;
         private WaitForSeconds _pulseTime;
         private bool _shouldMove = true;
-        
+        private WaitForSeconds _visibleWait;
+
         private void Awake()
         {
             _anim = GetComponent<Animator>();
@@ -35,7 +34,7 @@ namespace Kitsuma.Combat.Ranged.Projectiles
         protected override void Move()
         {
             if (!_shouldMove) return;
-            
+
             if (IsAtTarget())
             {
                 _shouldMove = false;
@@ -43,7 +42,7 @@ namespace Kitsuma.Combat.Ranged.Projectiles
                 StartCoroutine(HideCoroutine());
                 return;
             }
-            
+
             MoveToTarget();
         }
 
@@ -69,11 +68,11 @@ namespace Kitsuma.Combat.Ranged.Projectiles
                 yield return _pulseTime;
             }
         }
-        
+
         private void DamageAllNearby()
         {
             Collider2D[] cols = Physics2D.OverlapCircleAll(
-                T.position, 
+                T.position,
                 damageRadius);
 
             foreach (Collider2D c in cols)

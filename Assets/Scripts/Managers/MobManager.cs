@@ -7,7 +7,7 @@ namespace Kitsuma.Managers
     {
         protected override void OnCreate(GameObject obj)
         {
-            obj.GetComponent<Health>().Heal(float.MaxValue); 
+            obj.GetComponent<Health>().Heal(float.MaxValue);
             base.OnCreate(obj);
         }
     }

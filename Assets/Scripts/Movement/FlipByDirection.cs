@@ -1,4 +1,3 @@
-using System;
 using UnityEngine;
 
 namespace Kitsuma.Movement
@@ -6,7 +5,7 @@ namespace Kitsuma.Movement
     public class FlipByDirection : MonoBehaviour
     {
         [SerializeField] private Transform transformToFlip;
-        
+
         public void Flip(Vector3 dir)
         {
             transformToFlip.localScale = dir.x switch

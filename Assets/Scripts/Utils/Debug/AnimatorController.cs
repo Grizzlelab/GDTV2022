@@ -6,7 +6,7 @@ namespace Kitsuma.Utils.Debug
     public class AnimatorController : MonoBehaviour
     {
         [SerializeField] private TMP_Text tmp;
-        
+
         private Animator _anim;
         private string _state;
 

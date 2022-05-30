@@ -6,11 +6,6 @@ namespace Kitsuma.Combat.Ranged.Projectiles
 {
     public class SimpleProjectile : Projectile
     {
-        protected override void Move()
-        {
-            MoveToTarget();
-        }
-
         private void OnTriggerEnter2D(Collider2D col)
         {
             if (GameManager.Instance.GetIsPaused()) return;
@@ -19,6 +14,11 @@ namespace Kitsuma.Combat.Ranged.Projectiles
             health.Damage(Damage, OwnerTag);
             if (Pierces) return;
             Release();
+        }
+
+        protected override void Move()
+        {
+            MoveToTarget();
         }
     }
 }

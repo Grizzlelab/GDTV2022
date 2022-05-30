@@ -4,10 +4,10 @@ using UnityEngine;
 namespace Kitsuma.Movement
 {
     public class MovementBehaviour : MonoBehaviour
-    { 
+    {
         private AnimatedBehaviour _anim;
         private Direction _dir = Direction.Down;
-        
+
         private void Start()
         {
             _anim = GetComponent<AnimatedBehaviour>();

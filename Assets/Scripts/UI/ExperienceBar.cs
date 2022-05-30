@@ -17,7 +17,7 @@ namespace Kitsuma.UI
         {
             _t.localScale = new Vector3(
                 Mathf.Clamp((float)currentExp / expToNext, 0f, 1f),
-                1f, 
+                1f,
                 1f);
         }
     }

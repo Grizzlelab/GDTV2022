@@ -8,13 +8,15 @@ namespace Kitsuma.Entities.Shared
     public class Health : MonoBehaviour
     {
         private const float HealthUpgradeAmount = 10f;
-        
+
         [SerializeField] private float maxHealth = 10f;
         [SerializeField] private float currentHealth = 10f;
         [SerializeField] private bool hasInvuln;
         [SerializeField] private float invulnTime = 0.25f;
         [SerializeField] private UnityEvent<string> onDeath;
+
         [SerializeField] private UnityEvent onHit;
+
         // onHealthChanged should return a normalized version of current health
         [SerializeField] private UnityEvent<float> onHealthChanged;
 
@@ -67,12 +69,15 @@ namespace Kitsuma.Entities.Shared
             maxHealth += HealthUpgradeAmount;
             Heal(float.MaxValue);
         }
-        
+
         private void OnHealthChanged()
         {
             onHealthChanged?.Invoke(GetHealthNormalized());
         }
 
-        private float GetHealthNormalized() => currentHealth / maxHealth;
+        private float GetHealthNormalized()
+        {
+            return currentHealth / maxHealth;
+        }
     }
 }

@@ -9,18 +9,6 @@ namespace Kitsuma.Managers
     public class GameManager : MonoBehaviour
     {
         private static GameManager _instance;
-        public static GameManager Instance
-        {
-            get
-            {
-                if (_instance == null)
-                {
-                    _instance = FindObjectOfType<GameManager>();
-                }
-                
-                return _instance;
-            }
-        }
 
         [SerializeField] private GameObject player;
         [SerializeField] private GameObject necromancer;
@@ -34,13 +22,23 @@ namespace Kitsuma.Managers
         [SerializeField] private string lostSubheader = "";
 
         private bool _isPaused;
-        
+
+        public static GameManager Instance
+        {
+            get
+            {
+                if (_instance == null) _instance = FindObjectOfType<GameManager>();
+
+                return _instance;
+            }
+        }
+
         public void OnLevelUp()
         {
             levelUpScreen.SetActive(true);
             Pause();
         }
-        
+
         public void OnUpgradeHealth()
         {
             var playerHealth = player.GetComponent<Health>();
@@ -58,7 +56,7 @@ namespace Kitsuma.Managers
             deathUpgradeScreen.gameObject.SetActive(false);
             Unpause();
         }
-        
+
         public void OnPlayerDeath(string killerTag)
         {
             if (necromancer.CompareTag(killerTag))
@@ -161,7 +159,7 @@ namespace Kitsuma.Managers
             player.SetActive(true);
             necromancer.SetActive(true);
         }
-        
+
         private void DisableEntities()
         {
             player.SetActive(false);
@@ -192,8 +190,19 @@ namespace Kitsuma.Managers
             necromancer.GetComponent<EnemyAbilityController>().Unpause();
         }
 
-        public bool GetIsPaused() => _isPaused;
-        public GameObject GetPlayer() => player;
-        public GameObject GetNecro() => necromancer;
+        public bool GetIsPaused()
+        {
+            return _isPaused;
+        }
+
+        public GameObject GetPlayer()
+        {
+            return player;
+        }
+
+        public GameObject GetNecro()
+        {
+            return necromancer;
+        }
     }
 }

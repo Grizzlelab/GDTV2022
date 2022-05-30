@@ -1,5 +1,4 @@
-﻿using System;
-using UnityEngine;
+﻿using UnityEngine;
 
 namespace Kitsuma.Entities.Shared
 {
@@ -11,7 +10,7 @@ namespace Kitsuma.Entities.Shared
         private const string WalkUp = "_WalkUp";
 
         [SerializeField] private string animationPrefix = "Player";
-        
+
         private Animator _anim;
         private string _state;
 
@@ -39,9 +38,12 @@ namespace Kitsuma.Entities.Shared
         {
             SetAnimationState(ToAnimationString(WalkUp));
         }
-        
-        private string ToAnimationString(string s) => animationPrefix + s;
-        
+
+        private string ToAnimationString(string s)
+        {
+            return animationPrefix + s;
+        }
+
         private void SetAnimationState(string state)
         {
             if (string.Equals(_state, state)) return;

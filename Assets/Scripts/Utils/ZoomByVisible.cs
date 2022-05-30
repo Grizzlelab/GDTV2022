@@ -33,10 +33,10 @@ namespace Kitsuma.Utils
                 SetZoom(zoomLevel);
                 return;
             }
-            
+
             SetZoom(Mathf.Lerp(
-                GetZoom(), 
-                zoomLevel, 
+                GetZoom(),
+                zoomLevel,
                 Time.deltaTime * zoomSpeed));
         }
 
@@ -50,18 +50,21 @@ namespace Kitsuma.Utils
             return IsTargetOffScreen() ? zoomOnNotVisible : zoomOnVisible;
         }
 
-        private float GetZoom() => _cinemachine.m_Lens.OrthographicSize;
+        private float GetZoom()
+        {
+            return _cinemachine.m_Lens.OrthographicSize;
+        }
 
         private void SetZoom(float zoomLevel)
         {
             _cinemachine.m_Lens.OrthographicSize = zoomLevel;
         }
-        
+
         private bool IsTargetOffScreen()
         {
             Vector3 pos = _cam.WorldToScreenPoint(target.position);
-            return pos.x <= 0 || 
-                   pos.x >= Screen.width || 
+            return pos.x <= 0 ||
+                   pos.x >= Screen.width ||
                    pos.y <= 0 ||
                    pos.y >= Screen.height;
         }

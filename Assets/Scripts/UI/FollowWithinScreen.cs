@@ -6,7 +6,7 @@ namespace Kitsuma.UI
     {
         [SerializeField] protected Camera uiCamera;
         [SerializeField] protected float buffer = 100f;
-        
+
         private void Update()
         {
             if (!IsTargetOffScreen()) return;
@@ -22,12 +22,12 @@ namespace Kitsuma.UI
             localPosition = new Vector3(localPosition.x, localPosition.y, 0f);
             T.localPosition = localPosition;
         }
-        
+
         private bool IsTargetOffScreen()
         {
             Vector3 pos = Cam.WorldToScreenPoint(target.position);
-            return pos.x <= buffer || 
-                   pos.x >= Screen.width - buffer || 
+            return pos.x <= buffer ||
+                   pos.x >= Screen.width - buffer ||
                    pos.y <= buffer ||
                    pos.y >= Screen.height - buffer;
         }

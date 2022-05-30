@@ -8,21 +8,21 @@ namespace Kitsuma.Combat
         private const float DamageUpgradeIncrement = 1.2f;
         private const float SpeedUpgradeIncrement = 1.2f;
         private const float CooldownUpgradeDecrement = -1.2f;
-        
+
         [SerializeField] protected float damage = 2f;
         [SerializeField] protected float speed = 10f;
         [SerializeField] protected float maxSpeed = 15f;
         [SerializeField] protected float cooldownTime = 0.25f;
         [SerializeField] protected int level = 1;
 
-        protected Transform T;
-        protected string Owner;
-
         private bool _onCooldown;
-        private WaitForSeconds _wait;
+        private float _originalCooldown;
         private float _originalDamage;
         private float _originalSpeed;
-        private float _originalCooldown;
+        private WaitForSeconds _wait;
+        protected string Owner;
+
+        protected Transform T;
 
         private void Awake()
         {
@@ -58,8 +58,8 @@ namespace Kitsuma.Combat
             damage *= DamageUpgradeIncrement;
             speed = Mathf.Clamp(speed * SpeedUpgradeIncrement, 0f, maxSpeed);
             cooldownTime = Mathf.Clamp(
-                cooldownTime * CooldownUpgradeDecrement, 
-                0.05f, 
+                cooldownTime * CooldownUpgradeDecrement,
+                0.05f,
                 cooldownTime);
             _wait = new WaitForSeconds(cooldownTime);
             _onCooldown = false;
@@ -81,7 +81,7 @@ namespace Kitsuma.Combat
         {
             _onCooldown = false;
         }
-        
+
         protected abstract void OnUseAbility(Vector2 target);
     }
 }

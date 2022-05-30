@@ -1,5 +1,4 @@
 using UnityEngine;
-using Random = UnityEngine.Random;
 
 namespace Kitsuma.Entities.Enemies
 {
@@ -22,11 +21,8 @@ namespace Kitsuma.Entities.Enemies
             for (var i = 0; i < amountToDrop; i++)
             {
                 Vector3 pos = _t.position;
-                if (randomizedPosition)
-                {
-                    pos += (Vector3)Random.insideUnitCircle * randomRadius;
-                }
-            
+                if (randomizedPosition) pos += (Vector3)Random.insideUnitCircle * randomRadius;
+
                 Instantiate(expOrb, pos, Quaternion.identity);
             }
         }

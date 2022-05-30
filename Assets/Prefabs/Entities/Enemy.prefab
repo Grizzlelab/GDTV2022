@@ -166,6 +166,20 @@ MonoBehaviour:
   tagToHurt: Player
   radius: 1
   checkTime: 0.5
+--- !u!114 &3953370725548513354
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7045926218441451347}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8a35af7a3c0549b6aa7d1baacab0882b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  minDist: 10
+  maxDist: 20
 --- !u!114 &4153913610036405554
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -178,7 +192,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e924e0c941f44446b48349ef1dc05404, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  distance: 20
+  distance: 30
   onTooFar:
     m_PersistentCalls:
       m_Calls:
